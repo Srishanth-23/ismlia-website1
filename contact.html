@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | ISMLIA 2026 Symposium</title>
+    <meta name="description" content="Contact Organizing Secretariat at Chennai Institute of Technology for ISMLIA 2026 Symposium inquiries.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Looping Background Video -->
+    <div class="bg-video-container">
+        <video class="bg-video-player" playsinline autoplay muted loop>
+            <source src="AI_looping_website_background_video_202608162100 (online-video-cutter.com).mp4" type="video/mp4">
+        </video>
+        <div class="bg-video-overlay"></div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="navbar scrolled" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-badge">CIT</span>
+                <span class="logo-text">ISMLIA <span class="accent-text">'26</span></span>
+            </a>
+            
+            <nav class="nav-links" id="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="team.html" class="nav-link">Team</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+                <a href="register.html" class="nav-link">Register</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="register.html" class="btn btn-primary nav-btn">Register Now</a>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header Banner -->
+    <section class="page-banner">
+        <div class="container">
+            <span class="section-tag">Get In Touch</span>
+            <h1 class="page-title">Contact Secretariat</h1>
+            <p class="page-subtitle">Connect with the Organizing Committee at Chennai Institute of Technology</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Secretariat Desk</span>
+                <h2 class="section-title">Reach Out to Us</h2>
+                <p class="section-desc">Have questions regarding registration, poster paper submissions, or venue directions? We are here to assist you.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3>Venue Address</h3>
+                    <p><strong>Chennai Institute of Technology</strong><br>SH-113, Sarathy Nagar, Kundrathur,<br>Chennai, Tamil Nadu - 600069, India</p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <h3>Email Secretariat</h3>
+                    <p><strong>Primary Info:</strong> ismlia2026@citchennai.net<br><strong>Poster Session:</strong> posters.ismlia@citchennai.net</p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">🏛️</div>
+                    <h3>Organizing Departments</h3>
+                    <p>Department of Computer Science & Engineering (AIML)<br>& Department of Information Technology (IT)</p>
+                </div>
+            </div>
+
+            <!-- Interactive Contact Form -->
+            <div class="register-card-wrapper" style="margin-top: 60px;">
+                <div class="register-info-col">
+                    <span class="section-tag">Direct Inquiry</span>
+                    <h2>Send a Message</h2>
+                    <p>Fill out the form to get a direct response from the ISMLIA organizing committee.</p>
+                </div>
+
+                <div class="register-form-col">
+                    <form class="registration-form" id="contact-inquiry-form">
+                        <div class="form-group">
+                            <label for="contact-name">Your Full Name *</label>
+                            <input type="text" id="contact-name" class="form-control" placeholder="e.g. Dr. Rajesh Kumar" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-email">Email Address *</label>
+                            <input type="email" id="contact-email" class="form-control" placeholder="name@domain.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-subject">Subject *</label>
+                            <input type="text" id="contact-subject" class="form-control" placeholder="Poster Submission / Registration Inquiry" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-message">Message *</label>
+                            <textarea id="contact-message" class="form-control" rows="5" placeholder="Write your message details here..." style="background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border-color); border-radius: var(--radius-sm); color: white; padding: 12px; width: 100%; font-family: inherit;" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full btn-lg">
+                            <span>Send Inquiry</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="contact-modal">
+        <div class="modal-box">
+            <div class="modal-icon">📬</div>
+            <h2>Message Sent!</h2>
+            <p>Thank you for reaching out to the ISMLIA 2026 Organizing Secretariat at CIT. We will respond to your email shortly.</p>
+            <button class="btn btn-primary" id="close-contact-modal-btn">Close</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col brand-col">
+                <a href="index.html" class="logo">
+                    <span class="logo-badge">CIT</span>
+                    <span class="logo-text">ISMLIA <span class="accent-text">'26</span></span>
+                </a>
+                <p>One Day International Symposium on Machine Learning and its Industrial Applications (ISMLIA)<br>Friday 25th September 2026</p>
+                <p>Organized by Department of CSE (AIML) & Dept of IT<br><strong>Chennai Institute of Technology, Chennai, India</strong></p>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Symposium</a></li>
+                    <li><a href="team.html">Team & Speakers</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="register.html">Registration</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Organizing Secretariat</h4>
+                <p><strong>Chennai Institute of Technology</strong></p>
+                <p>Sarathy Nagar, Kundrathur, Chennai - 600069</p>
+                <p>Email: ismlia2026@citchennai.net</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2026 International Symposium on Machine Learning and its Industrial Applications (ISMLIA) • Chennai Institute of Technology</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
