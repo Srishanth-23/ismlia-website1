@@ -964,8 +964,8 @@ h1, h2, h3, h4 {
 }
 
 .speaker-avatar {
-    width: 60px;
-    height: 60px;
+    width: 88px;
+    height: 88px;
     border-radius: 50%;
     background: var(--gold-gradient);
     color: #060913;
@@ -974,8 +974,11 @@ h1, h2, h3, h4 {
     justify-content: center;
     font-family: var(--font-heading);
     font-weight: 800;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     flex-shrink: 0;
+    overflow: hidden;
+    border: 2px solid var(--primary);
+    box-shadow: 0 0 15px var(--primary-glow);
 }
 
 .speaker-meta h3 {
@@ -1457,6 +1460,141 @@ h1, h2, h3, h4 {
     color: var(--text-main);
 }
 
+/* Speaker Profile Popup Modal */
+.speaker-modal-box {
+    position: relative;
+    max-width: 680px;
+    width: 100%;
+    max-height: 88vh;
+    overflow-y: auto;
+    background: rgba(11, 16, 33, 0.96);
+    border: 1px solid var(--primary);
+    border-radius: var(--radius-lg);
+    padding: 36px 32px 30px;
+    text-align: left;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 35px var(--primary-glow);
+    transform: scale(0.94) translateY(15px);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+.modal-overlay.active .speaker-modal-box {
+    transform: scale(1) translateY(0);
+}
+
+.speaker-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    z-index: 10;
+}
+
+.speaker-modal-close:hover {
+    background: rgba(255, 70, 70, 0.25);
+    border-color: rgba(255, 100, 100, 0.6);
+    color: #FF6B6B;
+    transform: rotate(90deg) scale(1.08);
+}
+
+.speaker-modal-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 24px;
+}
+
+.speaker-modal-avatar-circle {
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(112, 0, 255, 0.3));
+    border: 3px solid var(--primary);
+    color: var(--primary);
+    font-weight: 800;
+    font-size: 2.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 12px 0 16px;
+    box-shadow: 0 0 25px var(--primary-glow);
+    overflow: hidden;
+}
+
+.speaker-avatar-circle img,
+.speaker-avatar img,
+.speaker-modal-avatar-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+.speaker-modal-header h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 6px;
+    font-family: 'Outfit', sans-serif;
+}
+
+.speaker-modal-designation {
+    color: var(--primary);
+    font-size: 0.95rem;
+    font-weight: 500;
+    max-width: 520px;
+    line-height: 1.4;
+    margin-bottom: 0;
+}
+
+.speaker-modal-content .talk-title-box {
+    margin-bottom: 22px;
+}
+
+.speaker-modal-section {
+    margin-bottom: 22px;
+}
+
+.speaker-modal-section:last-child {
+    margin-bottom: 0;
+}
+
+.speaker-modal-section h5 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.speaker-modal-section h5 svg {
+    color: var(--primary);
+}
+
+.speaker-modal-section p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+
 /* Footer */
 .footer {
     background: transparent;
@@ -1881,20 +2019,21 @@ h1, h2, h3, h4 {
 }
 
 .speaker-avatar-circle {
-    width: 68px;
-    height: 68px;
+    width: 96px;
+    height: 96px;
     border-radius: 50%;
     background: linear-gradient(135deg, rgba(212, 175, 55, 0.3), rgba(0, 242, 254, 0.2));
-    border: 2px solid var(--primary);
+    border: 2.5px solid var(--primary);
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 16px auto;
     font-family: var(--font-heading);
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     font-weight: 800;
     color: #FFFFFF;
-    box-shadow: 0 0 15px var(--primary-glow);
+    box-shadow: 0 0 20px var(--primary-glow);
+    overflow: hidden;
 }
 
 .speaker-home-card h3 {

@@ -215,53 +215,63 @@
 
             <div class="speakers-home-grid">
                 <!-- Speaker 1 -->
-                <div class="speaker-home-card">
+                <div class="speaker-home-card" data-speaker-id="1">
                     <div class="speaker-badge-num">LECTURE I</div>
-                    <div class="speaker-avatar-circle">VJ</div>
+                    <div class="speaker-avatar-circle">
+                        <img src="ChatGPT Image Aug 17, 2026, 06_16_09 AM.png" alt="Dr. Vijaysai Prasad">
+                    </div>
                     <h3>Dr. Vijaysai Prasad</h3>
                     <span class="speaker-org">L&T Constructions, India</span>
                     <p class="speaker-topic">Operational Excellence in Water Industry through Grey Box Digital Twins</p>
-                    <a href="team.html" class="speaker-link">View Full Profile →</a>
+                    <a href="team.html" class="speaker-link view-profile-btn" data-speaker-id="1">View Full Profile →</a>
                 </div>
 
                 <!-- Speaker 2 -->
-                <div class="speaker-home-card">
+                <div class="speaker-home-card" data-speaker-id="2">
                     <div class="speaker-badge-num">LECTURE II</div>
-                    <div class="speaker-avatar-circle">LK</div>
+                    <div class="speaker-avatar-circle">
+                        <img src="ChatGPT Image Aug 17, 2026, 06_20_39 AM.png" alt="Dr. Kanchi Lakshmi Kiran">
+                    </div>
                     <h3>Dr. Kanchi Lakshmi Kiran</h3>
                     <span class="speaker-org">DBS, Singapore</span>
                     <p class="speaker-topic">ML Applications in Commercial Banking and Risk Intelligence</p>
-                    <a href="team.html" class="speaker-link">View Full Profile →</a>
+                    <a href="team.html" class="speaker-link view-profile-btn" data-speaker-id="2">View Full Profile →</a>
                 </div>
 
                 <!-- Speaker 3 -->
-                <div class="speaker-home-card">
+                <div class="speaker-home-card" data-speaker-id="3">
                     <div class="speaker-badge-num">LECTURE III</div>
-                    <div class="speaker-avatar-circle">RR</div>
+                    <div class="speaker-avatar-circle">
+                        <img src="ChatGPT Image Aug 17, 2026, 06_24_35 AM.png" alt="Dr. Raghuraj K Rao">
+                    </div>
                     <h3>Dr. Raghuraj K Rao</h3>
                     <span class="speaker-org">AKXA Tech, India</span>
                     <p class="speaker-topic">Industrial AI: Symbolic Regression & Predictive Plant Control</p>
-                    <a href="team.html" class="speaker-link">View Full Profile →</a>
+                    <a href="team.html" class="speaker-link view-profile-btn" data-speaker-id="3">View Full Profile →</a>
                 </div>
 
                 <!-- Speaker 4 -->
-                <div class="speaker-home-card">
+                <div class="speaker-home-card" data-speaker-id="4">
                     <div class="speaker-badge-num">LECTURE IV</div>
-                    <div class="speaker-avatar-circle">WZ</div>
+                    <div class="speaker-avatar-circle">
+                        <img src="ChatGPT Image Aug 17, 2026, 06_32_37 AM.png" alt="Prof. Wu Zhe">
+                    </div>
                     <h3>Prof. Wu Zhe</h3>
                     <span class="speaker-org">NUS, Singapore</span>
                     <p class="speaker-topic">Physics-Informed ML for Process Engineering Systems</p>
-                    <a href="team.html" class="speaker-link">View Full Profile →</a>
+                    <a href="team.html" class="speaker-link view-profile-btn" data-speaker-id="4">View Full Profile →</a>
                 </div>
 
                 <!-- Speaker 5 -->
-                <div class="speaker-home-card">
+                <div class="speaker-home-card" data-speaker-id="5">
                     <div class="speaker-badge-num">LECTURE V</div>
-                    <div class="speaker-avatar-circle">RG</div>
+                    <div class="speaker-avatar-circle">
+                        <img src="ChatGPT Image Aug 17, 2026, 06_38_37 AM.png" alt="Prof. Ravindra Gudi">
+                    </div>
                     <h3>Prof. Ravindra Gudi</h3>
                     <span class="speaker-org">IIT Bombay, India</span>
                     <p class="speaker-topic">Hybrid First-Principles ML Models for Chemical Process Operations</p>
-                    <a href="team.html" class="speaker-link">View Full Profile →</a>
+                    <a href="team.html" class="speaker-link view-profile-btn" data-speaker-id="5">View Full Profile →</a>
                 </div>
             </div>
 
@@ -270,6 +280,43 @@
             </div>
         </div>
     </section>
+
+    <!-- Speaker Full Profile Modal Overlay -->
+    <div class="modal-overlay speaker-modal-overlay" id="speaker-modal" aria-hidden="true" role="dialog">
+        <div class="speaker-modal-box">
+            <button class="speaker-modal-close" id="close-speaker-modal" aria-label="Close Profile Modal">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="speaker-modal-header">
+                <span class="lecture-badge" id="sp-modal-badge">LECTURE I</span>
+                <div class="speaker-modal-avatar-circle" id="sp-modal-avatar">VJ</div>
+                <h2 id="sp-modal-name">Dr. Vijaysai Prasad</h2>
+                <p class="speaker-modal-designation" id="sp-modal-designation">JGM & Head, Water Technology Centre, L&T Constructions, Chennai, India</p>
+            </div>
+            <div class="speaker-modal-content">
+                <div class="talk-title-box">
+                    <h4>Talk Title: <span id="sp-modal-topic">Operational Excellence in Water Industry through Grey Box Digital Twins</span></h4>
+                </div>
+                <div class="speaker-modal-section">
+                    <h5>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        Biography
+                    </h5>
+                    <p id="sp-modal-bio">Dr. Vijaysai Prasad (VJ) heads WTC Kanchipuram at L&T's WET business...</p>
+                </div>
+                <div class="speaker-modal-section">
+                    <h5>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        Keynote Presentation Abstract
+                    </h5>
+                    <p id="sp-modal-summary">Presents the principles and implementation of grey-box digital twins...</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
