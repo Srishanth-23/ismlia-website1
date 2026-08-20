@@ -965,12 +965,12 @@ h1, h2, h3, h4 {
 .speaker-detail-list {
     display: flex;
     flex-direction: column;
-    gap: 28px;
+    gap: 32px;
 }
 
 .speaker-detail-card {
     background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--theme-border, var(--border-color));
     border-radius: var(--radius-lg);
     padding: 32px;
     backdrop-filter: blur(14px);
@@ -978,8 +978,53 @@ h1, h2, h3, h4 {
 }
 
 .speaker-detail-card:hover {
-    border-color: var(--border-accent);
-    box-shadow: 0 10px 40px rgba(0,0,0,0.6), 0 0 25px var(--primary-glow);
+    border-color: var(--theme-color, var(--border-accent));
+    box-shadow: 0 15px 40px rgba(0,0,0,0.7), 0 0 30px var(--theme-glow, var(--primary-glow));
+    transform: translateY(-4px);
+}
+
+.talk-body-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 8px;
+}
+
+@media (min-width: 992px) {
+    .talk-body-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.talk-body-column {
+    background: rgba(6, 9, 19, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: var(--transition);
+}
+
+.talk-body-column:hover {
+    background: rgba(10, 16, 30, 0.6);
+    border-color: var(--theme-border, rgba(255, 255, 255, 0.08));
+}
+
+.column-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--theme-color, #FFFFFF);
+}
+
+.column-header svg {
+    flex-shrink: 0;
 }
 
 .speaker-detail-header {
