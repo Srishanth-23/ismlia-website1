@@ -102,7 +102,7 @@ export default function Register() {
               </div>
               <div className="pricing-price">
                 <span className="currency">₹</span>
-                <span className="amount">500</span>
+                <span className="amount">250</span>
                 <span className="period">/ participant</span>
               </div>
               <ul className="pricing-features">
@@ -127,7 +127,7 @@ export default function Register() {
               </div>
               <div className="pricing-price">
                 <span className="currency">₹</span>
-                <span className="amount">1,000</span>
+                <span className="amount">500</span>
                 <span className="period">/ participant</span>
               </div>
               <ul className="pricing-features">
@@ -183,17 +183,17 @@ export default function Register() {
           <div className="poster-card-wrapper">
             <div className="poster-perk">
               <span className="prize-badge">1st Prize</span>
-              <h3>Rs. 10,000</h3>
+              <h3>Rs. 5,000</h3>
               <p>Best Poster Award + Certificate</p>
             </div>
             <div className="poster-perk">
               <span className="prize-badge">2nd Prize</span>
-              <h3>Rs. 5,000</h3>
+              <h3>Rs. 3,000</h3>
               <p>Second Best + Certificate</p>
             </div>
             <div className="poster-perk">
               <span className="prize-badge">3rd Prize</span>
-              <h3>Rs. 3,000</h3>
+              <h3>Rs. 2,000</h3>
               <p>Third Best + Certificate</p>
             </div>
           </div>
@@ -202,7 +202,7 @@ export default function Register() {
             <h3>Submission Guidelines & Important Dates</h3>
             <ul>
               <li><strong>Format:</strong> Submit a 2-page brief write-up of your project work (including key results) to the Convener, Poster Session.</li>
-              <li><strong>Abstract Submission Deadline:</strong> On or before <strong>10th September 2026</strong>.</li>
+              <li><strong>Abstract Submission Deadline:</strong> On or before <strong>15th September 2026</strong>.</li>
               <li><strong>Shortlist Intimation Date:</strong> On or before <strong>17th September 2026</strong>.</li>
               <li>Shortlisted candidates will prepare the poster in the prescribed format for physical display during the symposium poster session.</li>
             </ul>
@@ -246,8 +246,8 @@ export default function Register() {
                     value={formData.pass}
                     onChange={handleInputChange}
                   >
-                    <option value="Student">Academic Institutions - Student (₹ 500)</option>
-                    <option value="Faculty">Academic Institutions - Faculty (₹ 1,000)</option>
+                    <option value="Student">Academic Institutions - Student (₹ 250)</option>
+                    <option value="Faculty">Academic Institutions - Faculty (₹ 500)</option>
                     <option value="Industry">Industry & R&D Laboratories (₹ 2,000)</option>
                   </select>
                 </div>

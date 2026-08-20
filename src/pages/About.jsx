@@ -44,7 +44,7 @@ const timelineData = [
     tagClass: "tag-pink",
     tagText: "Poster Competition",
     title: "Interactive Student & Scholar Poster Exhibition",
-    desc: "Cash prize evaluation (Rs 10,000, 5,000 & 3,000) by International Chair.",
+    desc: "Cash prize evaluation (Rs 5,000, 3,000 & 2,000) by International Chair.",
     align: "left-item"
   },
   {

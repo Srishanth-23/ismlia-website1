@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom'
 import FeatureCard from '../components/FeatureCard'
 import { speakersData } from '../data/speakers'
 
-// Set the target date once when the module loads, exactly as in the original app.js
-const targetDate = new Date()
-targetDate.setDate(targetDate.getDate() + 68)
+// Target date of the symposium: 25th September 2026
+const targetDate = new Date("September 25, 2026 09:00:00")
 
 export default function Home({ onSelectSpeaker }) {
   const [timeLeft, setTimeLeft] = useState({
@@ -110,7 +109,7 @@ export default function Home({ onSelectSpeaker }) {
             </div>
             <div className="stat-divider"></div>
             <div className="stat-item">
-              <span className="stat-num">₹18,000</span>
+              <span className="stat-num">₹10,000</span>
               <span className="stat-desc">Poster Presentation Prizes</span>
             </div>
             <div className="stat-divider"></div>
