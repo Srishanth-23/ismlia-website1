@@ -54,10 +54,19 @@ export default function Home({ onSelectSpeaker }) {
             <img src="/ChatGPT Image Aug 16, 2026, 08_14_57 PM.png" alt="ISMLIA'26 Title Card" className="title-card-img" />
           </div>
 
-          <p className="organizer-tagline">
-            <span className="dept-title">Organized by Department of Artifical Intelligence and Machine Learning & Department of Computer Science and Business Systems</span> <br />
-            <strong>CHENNAI INSTITUTE OF TECHNOLOGY – Chennai, India</strong>
-          </p>
+          <div className="organizer-tagline" style={{ textAlign: 'center', marginTop: '24px', marginBottom: '32px' }}>
+            <span style={{ display: 'block', fontSize: '0.85rem', textTransform: 'uppercase', color: 'var(--primary)', marginBottom: '8px', letterSpacing: '2px', fontWeight: '600' }}>Organized by</span>
+            <span style={{ display: 'block', fontSize: '1.05rem', color: '#FFFFFF', fontWeight: '500', lineHeight: '1.6', maxWidth: '800px', margin: '0 auto 12px auto' }}>
+              Department of Artificial Intelligence and Machine Learning <br />
+              & Department of Computer Science and Business Systems
+            </span>
+            <strong style={{ display: 'block', fontSize: '1.15rem', color: 'var(--primary)', letterSpacing: '0.5px', textTransform: 'uppercase' }}>
+              Chennai Institute of Technology
+            </strong>
+            <span style={{ display: 'block', fontSize: '0.9rem', color: 'var(--text-muted)', marginTop: '4px' }}>
+              Kundrathur, Chennai, Tamil Nadu, India
+            </span>
+          </div>
 
           <div className="hero-cta-group">
             <Link to="/register" className="btn btn-primary btn-lg">
