@@ -993,6 +993,24 @@ h1, h2, h3, h4 {
     margin: 2px 0 0 0;
 }
 
+.committee-member-list.grid-2-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px 24px;
+}
+
+@media (min-width: 768px) {
+    .committee-card.members-card {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .committee-member-list.grid-2-col {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Detailed Speaker Cards */
 .speaker-detail-list {
     display: flex;

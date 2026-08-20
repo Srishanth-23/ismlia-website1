@@ -131,12 +131,12 @@ export default function Contact() {
     {
       role: "MEMBERS",
       members: [
-        { name: "Dr. J. Venkatesh", desc: "Professor / Member" },
-        { name: "Dr. S. Veeramalai", desc: "Professor / Member" },
-        { name: "Dr. A.R. Kavitha", desc: "Professor / Member" },
-        { name: "Dr. E. Kodhai", desc: "Professor / Member" },
-        { name: "Dr. G. Shanmugasundaram", desc: "Professor / Member" },
-        { name: "Dr. R. Basheer Mohammed", desc: "Professor / Member" }
+        { name: "Dr. J. Venkatesh", desc: "Professor" },
+        { name: "Dr. S. Veeramalai", desc: "Professor" },
+        { name: "Dr. A.R. Kavitha", desc: "Professor" },
+        { name: "Dr. E. Kodhai", desc: "Professor" },
+        { name: "Dr. G. Shanmugasundaram", desc: "Professor" },
+        { name: "Dr. R. Basheer Mohammed", desc: "Professor" }
       ]
     }
   ]
@@ -208,19 +208,22 @@ export default function Contact() {
             </div>
             
             <div className="committee-grid" style={{ marginTop: '30px' }}>
-              {fullCommittee.map((section, index) => (
-                <div key={index} className="committee-card">
-                  <span className="committee-role">{section.role}</span>
-                  <div className="committee-member-list">
-                    {section.members.map((member, mIdx) => (
-                      <div key={mIdx} className="committee-member-item">
-                        <h4>{member.name}</h4>
-                        <p>{member.desc}</p>
-                      </div>
-                    ))}
+              {fullCommittee.map((section, index) => {
+                const isMembers = section.role === "MEMBERS"
+                return (
+                  <div key={index} className={`committee-card ${isMembers ? 'members-card' : ''}`}>
+                    <span className="committee-role">{section.role}</span>
+                    <div className={`committee-member-list ${isMembers ? 'grid-2-col' : ''}`}>
+                      {section.members.map((member, mIdx) => (
+                        <div key={mIdx} className="committee-member-item">
+                          <h4>{member.name}</h4>
+                          <p>{member.desc}</p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
+                )
+              })}
             </div>
           </div>
 
