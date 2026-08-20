@@ -136,7 +136,11 @@ export default function Contact() {
           <div className="contact-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', marginBottom: '60px' }}>
             {contactList.map((contact, idx) => (
               <div className="contact-card" key={idx} style={{ textAlign: 'center', border: '1px solid rgba(212, 175, 55, 0.2)' }}>
-                <div className="contact-icon" style={{ fontSize: '2rem', marginBottom: '12px' }}>📞</div>
+                <div className="contact-icon" style={{ marginBottom: '12px', display: 'flex', justifyContent: 'center' }}>
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </div>
                 <span className="committee-role" style={{ marginBottom: '8px' }}>{contact.role}</span>
                 <h3>{contact.name}</h3>
                 <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '14px' }}>{contact.designation}</p>
@@ -153,21 +157,40 @@ export default function Contact() {
 
           <div className="contact-grid">
             <div className="contact-card">
-              <div className="contact-icon">📍</div>
+              <div className="contact-icon" style={{ display: 'flex', justifyContent: 'center', marginBottom: '10px' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
               <h3>Venue Address</h3>
               <p><strong>Chennai Institute of Technology</strong><br />SH-113, Sarathy Nagar, Kundrathur,<br />Chennai, Tamil Nadu - 600069, India</p>
             </div>
 
             <div className="contact-card">
-              <div className="contact-icon">✉️</div>
+              <div className="contact-icon" style={{ display: 'flex', justifyContent: 'center', marginBottom: '10px' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
               <h3>Email Secretariat</h3>
               <p><strong>Primary Info:</strong> ismlia2026@citchennai.net<br /><strong>Poster Session:</strong> posters.ismlia@citchennai.net</p>
             </div>
 
             <div className="contact-card">
-              <div className="contact-icon">🏛️</div>
+              <div className="contact-icon" style={{ display: 'flex', justifyContent: 'center', marginBottom: '10px' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M3 22h18"></path>
+                  <path d="M6 18v-7"></path>
+                  <path d="M10 18v-7"></path>
+                  <path d="M14 18v-7"></path>
+                  <path d="M18 18v-7"></path>
+                  <path d="M12 2 3 7h18z"></path>
+                </svg>
+              </div>
               <h3>Organizing Departments</h3>
-              <p>Department of Computer Science & Engineering (AIML)<br />& Department of Information Technology (IT)</p>
+              <p>Department of Artificial Intelligence and Machine Learning <br />& Department of Computer Science and Business Systems </p>
             </div>
           </div>
 

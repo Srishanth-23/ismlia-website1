@@ -344,7 +344,12 @@ export default function Register() {
       {/* Success Modal */}
       <div className={`modal-overlay ${showModal ? 'active' : ''}`} id="success-modal">
         <div className="modal-box">
-          <div className="modal-icon">🎉</div>
+          <div className="modal-icon" style={{ display: 'inline-flex', justifyContent: 'center', alignItems: 'center' }}>
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
           <h2>Registration Submitted!</h2>
           <p id="modal-msg">Thank you for registering for ISMLIA 2026 at Chennai Institute of Technology. Your registration badge details are listed below:</p>
           <div className="modal-ticket-details" id="ticket-summary">
@@ -357,8 +362,11 @@ export default function Register() {
                 <p><strong>Confirmation Email:</strong> {ticketDetails.email}</p>
                 {ticketDetails.poster === 'Yes' && (
                   <div style={{ marginTop: '15px', padding: '16px', background: 'rgba(0, 240, 255, 0.05)', border: '1px dashed var(--primary)', borderRadius: '8px', textAlign: 'left' }}>
-                    <p style={{ color: 'var(--primary)', margin: '0 0 6px 0', fontSize: '0.9rem', fontWeight: 'bold' }}>
-                      📁 Google Drive Submission Folder Created:
+                    <p style={{ color: 'var(--primary)', margin: '0 0 6px 0', fontSize: '0.9rem', fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                      </svg>
+                      Google Drive Submission Folder Created:
                     </p>
                     <p style={{ color: '#FFFFFF', margin: '0 0 10px 0', fontSize: '0.8rem', fontFamily: 'monospace', background: 'rgba(0,0,0,0.3)', padding: '6px 10px', borderRadius: '4px' }}>
                       {`ISMLIA_2026_Posters / ${ticketDetails.regId}_${ticketDetails.name.replace(/\s+/g, '_')}`}
@@ -371,9 +379,13 @@ export default function Register() {
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="btn btn-outline btn-full btn-sm"
-                      style={{ fontSize: '0.8rem', padding: '6px 12px', justifyContent: 'center' }}
+                      style={{ fontSize: '0.8rem', padding: '6px 12px', justifyContent: 'center', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
                     >
-                      🔗 Open Google Drive Repository
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                      </svg>
+                      Open Google Drive Repository
                     </a>
                   </div>
                 )}

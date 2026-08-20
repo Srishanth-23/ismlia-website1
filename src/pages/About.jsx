@@ -149,7 +149,10 @@ export default function About() {
           <div className="about-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px', marginTop: '40px', marginBottom: '50px' }}>
             <div className="about-card" style={{ background: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(255, 255, 255, 0.05)', borderLeft: '4px solid var(--primary)', borderRadius: '12px', padding: '32px', backdropFilter: 'blur(10px)', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.2)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-                <span style={{ fontSize: '1.5rem' }}>🏭</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <path d="M2 20h20"></path>
+                  <path d="M5 17V8l4 4V8l4 4V8l4 4v5"></path>
+                </svg>
                 <h3 style={{ fontSize: '1.25rem', color: '#FFFFFF', margin: 0, fontWeight: '700' }}>Industrial Paradigm Shift</h3>
               </div>
               <p style={{ color: 'var(--text-muted)', lineHeight: '1.7', fontSize: '0.98rem', margin: 0 }}>
@@ -159,7 +162,13 @@ export default function About() {
 
             <div className="about-card" style={{ background: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(255, 255, 255, 0.05)', borderLeft: '4px solid #00f0ff', borderRadius: '12px', padding: '32px', backdropFilter: 'blur(10px)', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.2)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-                <span style={{ fontSize: '1.5rem' }}>🔬</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00f0ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                  <path d="M14 2H8"></path>
+                  <path d="M11 2v10"></path>
+                  <path d="M14 12A3 3 0 1 1 8 12a3 3 0 0 1 6 0Z"></path>
+                  <path d="M12 15v5"></path>
+                  <path d="M8 20h8"></path>
+                </svg>
                 <h3 style={{ fontSize: '1.25rem', color: '#FFFFFF', margin: 0, fontWeight: '700' }}>Our Mission & Objective</h3>
               </div>
               <p style={{ color: 'var(--text-muted)', lineHeight: '1.7', fontSize: '0.98rem', margin: 0 }}>

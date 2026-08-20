@@ -92,7 +92,12 @@ export default function PosterGuidelines() {
 
             <div style={{ background: 'rgba(16, 185, 129, 0.05)', border: '1px solid rgba(16, 185, 129, 0.2)', padding: '16px', borderRadius: 'var(--radius-sm)' }}>
               <h5 style={{ color: '#10b981', margin: '0 0 6px 0', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <span>ℹ️</span> Abstract Layout Template
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                Abstract Layout Template
               </h5>
               <div style={{ fontFamily: 'monospace', fontSize: '0.82rem', color: 'var(--text-muted)', background: 'rgba(0,0,0,0.3)', padding: '12px', borderRadius: '4px', overflowX: 'auto', whiteSpace: 'pre-wrap' }}>
                 {"[1] Title of the Poster\n" +
@@ -108,7 +113,14 @@ export default function PosterGuidelines() {
         {activeTab === 'dates' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
             <div style={{ background: 'rgba(234, 179, 8, 0.05)', border: '1px solid rgba(234, 179, 8, 0.2)', padding: '16px', borderRadius: 'var(--radius-sm)', display: 'flex', gap: '15px', alignItems: 'center' }}>
-              <div style={{ fontSize: '2rem' }}>📅</div>
+              <div style={{ flexShrink: 0, display: 'flex' }}>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#eab308" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </div>
               <div>
                 <h4 style={{ color: '#eab308', margin: '0 0 4px 0' }}>Abstract Submission Deadline</h4>
                 <p style={{ color: '#FFFFFF', margin: '0', fontSize: '1.05rem', fontWeight: 'bold' }}>September 10, 2026</p>
@@ -117,7 +129,11 @@ export default function PosterGuidelines() {
             </div>
 
             <div style={{ background: 'rgba(0, 240, 255, 0.05)', border: '1px solid rgba(0, 240, 255, 0.2)', padding: '16px', borderRadius: 'var(--radius-sm)', display: 'flex', gap: '15px', alignItems: 'center' }}>
-              <div style={{ fontSize: '2rem' }}>📢</div>
+              <div style={{ flexShrink: 0, display: 'flex' }}>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00f0ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 2L2 22h20L12 2zm0 16a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm1-5.5h-2v-4h2v4z"/>
+                </svg>
+              </div>
               <div>
                 <h4 style={{ color: '#00f0ff', margin: '0 0 4px 0' }}>Shortlist Announcement</h4>
                 <p style={{ color: '#FFFFFF', margin: '0', fontSize: '1.05rem', fontWeight: 'bold' }}>September 13, 2026</p>

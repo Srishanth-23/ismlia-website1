@@ -55,7 +55,7 @@ export default function Home({ onSelectSpeaker }) {
           </div>
 
           <p className="organizer-tagline">
-            <span className="dept-title">Organized by Department of Computer Science and Engineering (AIML) & Department of Information Technology</span> <br />
+            <span className="dept-title">Organized by Department of Artifical Intelligence and Machine Learning & Department of Computer Science and Business Systems</span> <br />
             <strong>CHENNAI INSTITUTE OF TECHNOLOGY – Chennai, India</strong>
           </p>
 

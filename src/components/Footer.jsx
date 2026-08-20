@@ -16,7 +16,7 @@ export default function Footer() {
             Friday 25th September 2026
           </p>
           <p>
-            Organized by Department of CSE (AIML) & Dept of IT
+            Organized by Department of AIML & CSBS
             <br />
             <strong>Chennai Institute of Technology, Chennai, India</strong>
           </p>
