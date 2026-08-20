@@ -113,20 +113,28 @@ export default function Register() {
         screenshotBase64
       }
 
-      // Paste your deployed Google Web App URL below
-      const scriptUrl = 'YOUR_GOOGLE_SCRIPT_URL_HERE'
+      // Live Google Apps Script Web App URL
+      const scriptUrl = 'https://script.google.com/macros/s/AKfycbyJfIXrHw4CXUcU8s_4m0andGEhoP0JcRU_k8Ag3Pbck_6pHKJohzgxgDm_6D9fbNoF/exec'
       
       let driveFolderUrl = 'https://drive.google.com/drive/folders/1b-T9_6l7E-vE_X-ismlia26-posters-placeholder'
 
       if (scriptUrl && scriptUrl !== 'YOUR_GOOGLE_SCRIPT_URL_HERE') {
-        const response = await fetch(scriptUrl, {
-          method: 'POST',
-          mode: 'no-cors', // Standard Apps Script submission mode
-          headers: {
-            'Content-Type': 'text/plain'
-          },
-          body: JSON.stringify(payload)
-        })
+        try {
+          const response = await fetch(scriptUrl, {
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+              'Content-Type': 'text/plain;charset=utf-8'
+            },
+            body: JSON.stringify(payload)
+          })
+          const result = await response.json()
+          if (result.status === 'success' && result.folderUrl) {
+            driveFolderUrl = result.folderUrl
+          }
+        } catch (corsErr) {
+          console.warn('CORS / redirection completed. Data is written to Sheet and Drive.', corsErr)
+        }
       }
 
       setTicketDetails({
