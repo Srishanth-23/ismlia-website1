@@ -114,7 +114,7 @@ export default function Register() {
       }
 
       // Live Google Apps Script Web App URL
-      const scriptUrl = 'https://script.google.com/macros/s/AKfycbyJfIXrHw4CXUcU8s_4m0andGEhoP0JcRU_k8Ag3Pbck_6pHKJohzgxgDm_6D9fbNoF/exec'
+      const scriptUrl = 'https://script.google.com/macros/s/AKfycbwaVZRHkQOL_RKjHxmIdOglNM7veFwLdNUpPm4iCFQt3KNXOpW7a3qsQesT-v62MzRZ/exec'
       
       let driveFolderUrl = 'https://drive.google.com/drive/folders/1b-T9_6l7E-vE_X-ismlia26-posters-placeholder'
 
