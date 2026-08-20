@@ -22,6 +22,7 @@ export default function Register() {
 
   const [ticketDetails, setTicketDetails] = useState(null)
   const [showModal, setShowModal] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
 
   useEffect(() => {
     if (location.state?.scrollTarget === 'register' || location.hash === '#register') {
@@ -69,40 +70,103 @@ export default function Register() {
     }
   }
 
-  const handleSubmit = (e) => {
+  const fileToBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      if (!file) {
+        resolve(null)
+        return
+      }
+      const reader = new FileReader()
+      reader.readAsDataURL(file)
+      reader.onload = () => {
+        const base64String = reader.result.split(',')[1]
+        resolve(base64String)
+      }
+      reader.onerror = (error) => reject(error)
+    })
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
+    setSubmitting(true)
+    
     const regId = 'ISMLIA-' + Math.floor(100000 + Math.random() * 900000)
     
-    setTicketDetails({
-      regId,
-      name: `${formData.fname} ${formData.lname}`,
-      pass: formData.pass,
-      org: formData.org,
-      email: formData.email,
-      poster: formData.poster,
-      txid: formData.txid,
-      pdfName: formData.pdfFile ? formData.pdfFile.name : null,
-      screenshotName: formData.screenshotFile ? formData.screenshotFile.name : null
-    })
-    
-    setShowModal(true)
-    setFormData({
-      pass: 'Student',
-      fname: '',
-      lname: '',
-      email: '',
-      org: '',
-      designation: '',
-      poster: 'No',
-      pdfFile: null,
-      txid: '',
-      screenshotFile: null
-    })
+    try {
+      const pdfBase64 = formData.pdfFile ? await fileToBase64(formData.pdfFile) : null
+      const screenshotBase64 = formData.screenshotFile ? await fileToBase64(formData.screenshotFile) : null
+      
+      const payload = {
+        regId,
+        pass: formData.pass,
+        fname: formData.fname,
+        lname: formData.lname,
+        email: formData.email,
+        org: formData.org,
+        designation: formData.designation,
+        poster: formData.poster,
+        txid: formData.txid,
+        pdfName: formData.pdfFile ? formData.pdfFile.name : null,
+        pdfBase64,
+        screenshotName: formData.screenshotFile ? formData.screenshotFile.name : null,
+        screenshotMime: formData.screenshotFile ? formData.screenshotFile.type : null,
+        screenshotBase64
+      }
 
-    const fileInput = document.getElementById('reg-pdf')
-    if (fileInput) fileInput.value = ''
-    const screenshotInput = document.getElementById('reg-screenshot')
-    if (screenshotInput) screenshotInput.value = ''
+      // Paste your deployed Google Web App URL below
+      const scriptUrl = 'YOUR_GOOGLE_SCRIPT_URL_HERE'
+      
+      let driveFolderUrl = 'https://drive.google.com/drive/folders/1b-T9_6l7E-vE_X-ismlia26-posters-placeholder'
+
+      if (scriptUrl && scriptUrl !== 'YOUR_GOOGLE_SCRIPT_URL_HERE') {
+        const response = await fetch(scriptUrl, {
+          method: 'POST',
+          mode: 'no-cors', // Standard Apps Script submission mode
+          headers: {
+            'Content-Type': 'text/plain'
+          },
+          body: JSON.stringify(payload)
+        })
+      }
+
+      setTicketDetails({
+        regId,
+        name: `${formData.fname} ${formData.lname}`,
+        pass: formData.pass,
+        org: formData.org,
+        email: formData.email,
+        poster: formData.poster,
+        txid: formData.txid,
+        pdfName: formData.pdfFile ? formData.pdfFile.name : null,
+        screenshotName: formData.screenshotFile ? formData.screenshotFile.name : null,
+        driveFolderUrl
+      })
+      
+      setShowModal(true)
+      
+      setFormData({
+        pass: 'Student',
+        fname: '',
+        lname: '',
+        email: '',
+        org: '',
+        designation: '',
+        poster: 'No',
+        pdfFile: null,
+        txid: '',
+        screenshotFile: null
+      })
+
+      const fileInput = document.getElementById('reg-pdf')
+      if (fileInput) fileInput.value = ''
+      const screenshotInput = document.getElementById('reg-screenshot')
+      if (screenshotInput) screenshotInput.value = ''
+      
+    } catch (err) {
+      alert('Error during registration: ' + err.message)
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   const closeModal = () => {
@@ -394,11 +458,13 @@ export default function Register() {
                   </div>
                 )}
 
-                <button type="submit" className="btn btn-primary btn-full btn-lg">
-                  <span>Submit Registration</span>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
+                <button type="submit" className="btn btn-primary btn-full btn-lg" disabled={submitting}>
+                  <span>{submitting ? 'Submitting Registration...' : 'Submit Registration'}</span>
+                  {!submitting && (
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  )}
                 </button>
               </form>
             </div>
@@ -444,7 +510,7 @@ export default function Register() {
                       Your abstract PDF has been moved and structured into this dedicated drive folder with your participant details.
                     </p>
                     <a 
-                      href="https://drive.google.com/drive/folders/1b-T9_6l7E-vE_X-ismlia26-posters-placeholder" 
+                      href={ticketDetails.driveFolderUrl || "https://drive.google.com/drive/folders/1b-T9_6l7E-vE_X-ismlia26-posters-placeholder"} 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="btn btn-outline btn-full btn-sm"
@@ -454,7 +520,7 @@ export default function Register() {
                         <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
                         <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
                       </svg>
-                      Open Google Drive Repository
+                      Open Google Drive Folder
                     </a>
                   </div>
                 )}
