@@ -1,6 +1,9 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function Contact() {
+  const navigate = useNavigate()
+
   const contactList = [
     {
       name: "Dr. R. Gowri",
@@ -192,6 +195,52 @@ export default function Contact() {
                   </div>
                 )
               })}
+            </div>
+          </div>
+
+          {/* Registration Portal Redirect Card */}
+          <div className="register-card-wrapper" style={{ marginTop: '80px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' }}>
+            <div className="register-info-col" style={{ background: 'rgba(212, 175, 55, 0.03)', padding: '40px' }}>
+              <span className="section-tag" style={{ color: 'var(--primary)' }}>Registration Desk</span>
+              <h2 style={{ fontSize: '2rem', color: '#FFFFFF', marginTop: '10px' }}>Secure Your Seat</h2>
+              <p style={{ color: 'var(--text-muted)', lineHeight: '1.6', fontSize: '0.95rem' }}>
+                Join us at the One Day International Symposium on Machine Learning and its Industrial Applications (ISMLIA 2026) at Chennai Institute of Technology.
+              </p>
+              
+              <div className="register-perks" style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginTop: '20px' }}>
+                <div className="perk-item" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <span className="perk-icon" style={{ background: 'rgba(212, 175, 55, 0.15)', color: 'var(--primary)', borderRadius: '50%', width: '24px', height: '24px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold' }}>✓</span>
+                  <span style={{ color: 'var(--text-light)', fontSize: '0.9rem' }}>Access to all keynote sessions and panels</span>
+                </div>
+                <div className="perk-item" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <span className="perk-icon" style={{ background: 'rgba(212, 175, 55, 0.15)', color: 'var(--primary)', borderRadius: '50%', width: '24px', height: '24px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold' }}>✓</span>
+                  <span style={{ color: 'var(--text-light)', fontSize: '0.9rem' }}>Includes high tea and networking lunch</span>
+                </div>
+                <div className="perk-item" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <span className="perk-icon" style={{ background: 'rgba(212, 175, 55, 0.15)', color: 'var(--primary)', borderRadius: '50%', width: '24px', height: '24px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold' }}>✓</span>
+                  <span style={{ color: 'var(--text-light)', fontSize: '0.9rem' }}>Certificates issued by CIT Secretariat</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="register-form-col" style={{ padding: '40px', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '20px' }}>
+              <div>
+                <h3 style={{ color: '#FFFFFF', fontSize: '1.4rem', marginBottom: '8px' }}>Symposium Registration</h3>
+                <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.5' }}>
+                  All delegates (students, faculty, and industry professionals) must complete the registration process to obtain a valid pass and submit poster abstracts.
+                </p>
+              </div>
+
+              <button 
+                onClick={() => navigate('/register')} 
+                className="btn btn-primary btn-full btn-lg" 
+                style={{ display: 'inline-flex', justifyContent: 'center', alignItems: 'center', gap: '10px', padding: '16px' }}
+              >
+                <span>Go to Registration Portal</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </button>
             </div>
           </div>
 

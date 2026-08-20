@@ -1,24 +1,96 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { useLocation } from 'react-router-dom'
+import PosterGuidelines from '../components/PosterGuidelines'
 
 export default function Register() {
   const location = useLocation()
+  
   const registerSectionRef = useRef(null)
+
+  const [formData, setFormData] = useState({
+    pass: 'Student',
+    fname: '',
+    lname: '',
+    email: '',
+    org: '',
+    designation: '',
+    poster: 'No',
+    pdfFile: null
+  })
+
+  const [ticketDetails, setTicketDetails] = useState(null)
+  const [showModal, setShowModal] = useState(false)
 
   useEffect(() => {
     if (location.state?.scrollTarget === 'register' || location.hash === '#register') {
       registerSectionRef.current?.scrollIntoView({ behavior: 'smooth' })
     }
+    
+    if (location.state?.poster === 'Yes') {
+      setFormData(prev => ({
+        ...prev,
+        poster: 'Yes'
+      }))
+    }
   }, [location])
 
-  const handleRegisterRedirect = () => {
-    // Official Google Form Registration Portal Link
-    window.open('https://forms.gle/ismlia2026-placeholder', '_blank', 'noopener,noreferrer')
+  const selectPass = (passType) => {
+    setFormData(prev => ({
+      ...prev,
+      pass: passType
+    }))
+    registerSectionRef.current?.scrollIntoView({ behavior: 'smooth' })
   }
 
-  const handleDriveRedirect = () => {
-    // Official Google Drive Abstract Folder link
-    window.open('https://drive.google.com/drive/folders/1b-T9_6l7E-vE_X-ismlia26-posters-placeholder', '_blank', 'noopener,noreferrer')
+  const handleInputChange = (e) => {
+    const { id, value } = e.target
+    const stateKey = id.replace('reg-', '')
+    setFormData(prev => ({
+      ...prev,
+      [stateKey]: value
+    }))
+  }
+
+  const handleFileChange = (e) => {
+    setFormData(prev => ({
+      ...prev,
+      pdfFile: e.target.files[0]
+    }))
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const regId = 'ISMLIA-' + Math.floor(100000 + Math.random() * 900000)
+    
+    setTicketDetails({
+      regId,
+      name: `${formData.fname} ${formData.lname}`,
+      pass: formData.pass,
+      org: formData.org,
+      email: formData.email,
+      poster: formData.poster,
+      pdfName: formData.pdfFile ? formData.pdfFile.name : null
+    })
+    
+    setShowModal(true)
+    setFormData({
+      pass: 'Student',
+      fname: '',
+      lname: '',
+      email: '',
+      org: '',
+      designation: '',
+      poster: 'No',
+      pdfFile: null
+    })
+
+    const fileInput = document.getElementById('reg-pdf')
+    if (fileInput) fileInput.value = ''
+  }
+
+  const closeModal = () => {
+    setShowModal(false)
+    setTicketDetails(null)
   }
 
   return (
@@ -27,8 +99,8 @@ export default function Register() {
       <section className="page-banner">
         <div className="container">
           <span className="section-tag">Online Registration Portal</span>
-          <h1 className="page-title">Symposium Registration</h1>
-          <p className="page-subtitle">Select your delegate pass category and proceed to the official registration portal</p>
+          <h1 className="page-title">Register for ISMLIA 2026</h1>
+          <p className="page-subtitle">Select your pass category and submit your registration details below</p>
         </div>
       </section>
 
@@ -59,9 +131,9 @@ export default function Register() {
               </ul>
               <button 
                 className="btn btn-outline btn-full select-pass-btn" 
-                onClick={handleRegisterRedirect}
+                onClick={() => selectPass('Student')}
               >
-                Register as Student
+                Select Student Pass
               </button>
             </div>
 
@@ -84,9 +156,9 @@ export default function Register() {
               </ul>
               <button 
                 className="btn btn-primary btn-full select-pass-btn" 
-                onClick={handleRegisterRedirect}
+                onClick={() => selectPass('Faculty')}
               >
-                Register as Faculty
+                Select Faculty Pass
               </button>
             </div>
 
@@ -108,90 +180,209 @@ export default function Register() {
               </ul>
               <button 
                 className="btn btn-outline btn-full select-pass-btn" 
-                onClick={handleRegisterRedirect}
+                onClick={() => selectPass('Industry')}
               >
-                Register as Industry Delegate
+                Select Industry Pass
               </button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Registration Portal Action Card */}
+
+      {/* Registration Form Section */}
       <section className="section register-section">
         <div className="container">
-          <div className="register-card-wrapper" id="register" ref={registerSectionRef} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' }}>
-            
-            {/* Left Info Column */}
-            <div className="register-info-col" style={{ background: 'rgba(212, 175, 55, 0.03)', padding: '40px' }}>
-              <span className="section-tag" style={{ color: 'var(--primary)' }}>Secure Access Portal</span>
-              <h2 style={{ fontSize: '2rem', color: '#FFFFFF', marginTop: '10px' }}>Registration Portal</h2>
-              <p style={{ color: 'var(--text-muted)', lineHeight: '1.6', fontSize: '0.95rem' }}>
-                All participants, delegates, and poster presenters must submit registration details, payment receipts, and abstract files through our centralized Google Forms submission database.
-              </p>
+          <div className="register-card-wrapper" id="register" ref={registerSectionRef}>
+            <div className="register-info-col">
+              <span className="section-tag">Registration Portal</span>
+              <h2>Register for ISMLIA 2026</h2>
+              <p>Complete the form to confirm your registration for the One Day International Symposium at Chennai Institute of Technology.</p>
               
-              <div className="register-perks" style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginTop: '20px' }}>
-                <div className="perk-item" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <span className="perk-icon" style={{ background: 'rgba(212, 175, 55, 0.15)', color: 'var(--primary)', borderRadius: '50%', width: '24px', height: '24px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold' }}>✓</span>
-                  <span style={{ color: 'var(--text-light)', fontSize: '0.9rem' }}>Official CIT Secretariat Ingestion</span>
+              <div className="register-perks">
+                <div className="perk-item">
+                  <span className="perk-icon">✓</span>
+                  <span>Official CIT Secretariat Confirmation</span>
                 </div>
-                <div className="perk-item" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <span className="perk-icon" style={{ background: 'rgba(212, 175, 55, 0.15)', color: 'var(--primary)', borderRadius: '50%', width: '24px', height: '24px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold' }}>✓</span>
-                  <span style={{ color: 'var(--text-light)', fontSize: '0.9rem' }}>Secure payment verification receipt upload</span>
+                <div className="perk-item">
+                  <span className="perk-icon">✓</span>
+                  <span>Includes High Tea & Networking Lunch</span>
                 </div>
-                <div className="perk-item" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <span className="perk-icon" style={{ background: 'rgba(212, 175, 55, 0.15)', color: 'var(--primary)', borderRadius: '50%', width: '24px', height: '24px', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold' }}>✓</span>
-                  <span style={{ color: 'var(--text-light)', fontSize: '0.9rem' }}>Poster abstract PDF storage synchronization</span>
+                <div className="perk-item">
+                  <span className="perk-icon">✓</span>
+                  <span>Poster presentation eligibility for students</span>
                 </div>
               </div>
             </div>
 
-            {/* Right Action Column */}
-            <div className="register-form-col" style={{ padding: '40px', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '20px' }}>
-              <div>
-                <h3 style={{ color: '#FFFFFF', fontSize: '1.4rem', marginBottom: '8px' }}>Proceed to Google Form</h3>
-                <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.5' }}>
-                  Click the button below to open the registration form in a new tab. Make sure to have your payment transaction receipt ready for upload.
-                </p>
-              </div>
+            <div className="register-form-col">
+              <form className="registration-form" id="registration-form" onSubmit={handleSubmit}>
+                <div className="form-group">
+                  <label htmlFor="reg-pass">Registration Category *</label>
+                  <select 
+                    id="reg-pass" 
+                    required 
+                    className="form-control"
+                    value={formData.pass}
+                    onChange={handleInputChange}
+                  >
+                    <option value="Student">Academic Institutions - Student (₹ 250)</option>
+                    <option value="Faculty">Academic Institutions - Faculty (₹ 500)</option>
+                    <option value="Industry">Industry & R&D Laboratories (₹ 2,000)</option>
+                  </select>
+                </div>
 
-              <button 
-                onClick={handleRegisterRedirect} 
-                className="btn btn-primary btn-full btn-lg" 
-                style={{ display: 'inline-flex', justifyContent: 'center', alignItems: 'center', gap: '10px', padding: '16px' }}
-              >
-                <span>Open Google Registration Form</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-              </button>
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="reg-fname">First Name *</label>
+                    <input 
+                      type="text" 
+                      id="reg-fname" 
+                      className="form-control" 
+                      placeholder="e.g. Rahul" 
+                      value={formData.fname}
+                      onChange={handleInputChange}
+                      required 
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="reg-lname">Last Name *</label>
+                    <input 
+                      type="text" 
+                      id="reg-lname" 
+                      className="form-control" 
+                      placeholder="e.g. Sharma" 
+                      value={formData.lname}
+                      onChange={handleInputChange}
+                      required 
+                    />
+                  </div>
+                </div>
 
-              {/* Shared Google Drive submission link info */}
-              <div style={{ marginTop: '10px', padding: '20px', border: '1px dashed rgba(0, 240, 255, 0.25)', borderRadius: '8px', background: 'rgba(0, 240, 255, 0.02)' }}>
-                <h4 style={{ color: '#00f0ff', fontSize: '1rem', margin: '0 0 8px 0', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <span>📁</span> Abstract Submission Directory
-                </h4>
-                <p style={{ color: 'var(--text-muted)', fontSize: '0.82rem', margin: '0 0 16px 0', lineHeight: '1.4' }}>
-                  Registered poster session participants can view the shared Google Drive repository. Submitted abstracts are structured into individual participant folders automatically.
-                </p>
-                <button 
-                  onClick={handleDriveRedirect} 
-                  className="btn btn-outline btn-full btn-sm"
-                  style={{ display: 'inline-flex', justifyContent: 'center', alignItems: 'center', gap: '8px', padding: '10px' }}
-                >
-                  <span>Open Google Drive Repository</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                <div className="form-group">
+                  <label htmlFor="reg-email">Email Address *</label>
+                  <input 
+                    type="email" 
+                    id="reg-email" 
+                    className="form-control" 
+                    placeholder="name@institution.edu.in" 
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required 
+                  />
+                </div>
+
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="reg-org">Institution / Company *</label>
+                    <input 
+                      type="text" 
+                      id="reg-org" 
+                      className="form-control" 
+                      placeholder="e.g. CIT / L&T" 
+                      value={formData.org}
+                      onChange={handleInputChange}
+                      required 
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="reg-designation">Department / Designation *</label>
+                    <input 
+                      type="text" 
+                      id="reg-designation" 
+                      className="form-control" 
+                      placeholder="e.g. CSE / Student / Assistant Prof" 
+                      value={formData.designation}
+                      onChange={handleInputChange}
+                      required 
+                    />
+                  </div>
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="reg-poster">Participating in Poster Session?</label>
+                  <select 
+                    id="reg-poster" 
+                    className="form-control"
+                    value={formData.poster}
+                    onChange={handleInputChange}
+                  >
+                    <option value="No">No, Attending Sessions Only</option>
+                    <option value="Yes">Yes, Submitting Poster Abstract</option>
+                  </select>
+                </div>
+
+                {formData.poster === 'Yes' && (
+                  <div className="form-group animate-fade-in" style={{ border: '1px dashed var(--primary)', padding: '16px', borderRadius: '8px', marginTop: '16px', background: 'rgba(0, 240, 255, 0.03)' }}>
+                    <label htmlFor="reg-pdf" style={{ color: 'var(--primary)', fontWeight: 'bold' }}>Upload Abstract (PDF Format) *</label>
+                    <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '8px' }}>
+                      Please select your 1-page PDF abstract (max 300 words, Times New Roman, 12pt). Submissions are directly archived in the symposium Google Drive.
+                    </p>
+                    <input 
+                      type="file" 
+                      id="reg-pdf" 
+                      accept=".pdf" 
+                      className="form-control" 
+                      required 
+                      onChange={handleFileChange}
+                    />
+                  </div>
+                )}
+
+                <button type="submit" className="btn btn-primary btn-full btn-lg">
+                  <span>Submit Registration</span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
                 </button>
-              </div>
+              </form>
             </div>
-
           </div>
         </div>
       </section>
+
+      {/* Success Modal */}
+      <div className={`modal-overlay ${showModal ? 'active' : ''}`} id="success-modal">
+        <div className="modal-box">
+          <div className="modal-icon">🎉</div>
+          <h2>Registration Submitted!</h2>
+          <p id="modal-msg">Thank you for registering for ISMLIA 2026 at Chennai Institute of Technology. Your registration badge details are listed below:</p>
+          <div className="modal-ticket-details" id="ticket-summary">
+            {ticketDetails && (
+              <div style={{ lineHeight: '1.8' }}>
+                <p><strong>Registration ID:</strong> {ticketDetails.regId}</p>
+                <p><strong>Attendee Name:</strong> {ticketDetails.name}</p>
+                <p><strong>Pass Category:</strong> {ticketDetails.pass} Pass</p>
+                <p><strong>Organization:</strong> {ticketDetails.org}</p>
+                <p><strong>Confirmation Email:</strong> {ticketDetails.email}</p>
+                {ticketDetails.poster === 'Yes' && (
+                  <div style={{ marginTop: '15px', padding: '16px', background: 'rgba(0, 240, 255, 0.05)', border: '1px dashed var(--primary)', borderRadius: '8px', textAlign: 'left' }}>
+                    <p style={{ color: 'var(--primary)', margin: '0 0 6px 0', fontSize: '0.9rem', fontWeight: 'bold' }}>
+                      📁 Google Drive Submission Folder Created:
+                    </p>
+                    <p style={{ color: '#FFFFFF', margin: '0 0 10px 0', fontSize: '0.8rem', fontFamily: 'monospace', background: 'rgba(0,0,0,0.3)', padding: '6px 10px', borderRadius: '4px' }}>
+                      {`ISMLIA_2026_Posters / ${ticketDetails.regId}_${ticketDetails.name.replace(/\s+/g, '_')}`}
+                    </p>
+                    <p style={{ color: 'var(--text-muted)', margin: '0 0 12px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                      Your abstract PDF has been moved and structured into this dedicated drive folder with your participant details.
+                    </p>
+                    <a 
+                      href="https://drive.google.com/drive/folders/1b-T9_6l7E-vE_X-ismlia26-posters-placeholder" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="btn btn-outline btn-full btn-sm"
+                      style={{ fontSize: '0.8rem', padding: '6px 12px', justifyContent: 'center' }}
+                    >
+                      🔗 Open Google Drive Repository
+                    </a>
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+          <button className="btn btn-primary" id="close-modal-btn" onClick={closeModal}>Done</button>
+        </div>
+      </div>
     </div>
   )
 }
