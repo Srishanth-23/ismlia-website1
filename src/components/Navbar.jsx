@@ -67,6 +67,13 @@ export default function Navbar() {
             Team
           </Link>
           <Link 
+            to="/poster" 
+            className={`nav-link ${location.pathname === '/poster' ? 'active' : ''}`}
+            onClick={closeMobileMenu}
+          >
+            Poster
+          </Link>
+          <Link 
             to="/contact" 
             className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}
             onClick={closeMobileMenu}

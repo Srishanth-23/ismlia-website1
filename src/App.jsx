@@ -11,6 +11,7 @@ import About from './pages/About'
 import Team from './pages/Team'
 import Contact from './pages/Contact'
 import Register from './pages/Register'
+import Poster from './pages/Poster'
 
 // Simple helper to scroll window to top on Route changes
 function ScrollToTop() {
@@ -54,6 +55,7 @@ export default function App() {
         <Route path="/" element={<Home onSelectSpeaker={setActiveSpeakerId} />} />
         <Route path="/about" element={<About />} />
         <Route path="/team" element={<Team />} />
+        <Route path="/poster" element={<Poster />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/register" element={<Register />} />
       </Routes>

@@ -5,7 +5,6 @@ import PosterGuidelines from '../components/PosterGuidelines'
 export default function Register() {
   const location = useLocation()
   
-  const posterRef = useRef(null)
   const registerSectionRef = useRef(null)
 
   const [formData, setFormData] = useState({
@@ -23,10 +22,15 @@ export default function Register() {
   const [showModal, setShowModal] = useState(false)
 
   useEffect(() => {
-    if (location.state?.scrollTarget === 'poster' || location.hash === '#poster') {
-      posterRef.current?.scrollIntoView({ behavior: 'smooth' })
-    } else if (location.state?.scrollTarget === 'register' || location.hash === '#register') {
+    if (location.state?.scrollTarget === 'register' || location.hash === '#register') {
       registerSectionRef.current?.scrollIntoView({ behavior: 'smooth' })
+    }
+    
+    if (location.state?.poster === 'Yes') {
+      setFormData(prev => ({
+        ...prev,
+        poster: 'Yes'
+      }))
     }
   }, [location])
 
@@ -185,36 +189,6 @@ export default function Register() {
         </div>
       </section>
 
-      {/* Poster Presentation Call & Guidelines */}
-      <section className="section poster-section" ref={posterRef} id="poster">
-        <div className="container">
-          <div className="section-header">
-            <span className="section-tag">Poster Call</span>
-            <h2 className="section-title">Poster Presentation Competition</h2>
-            <p className="section-desc">Students and research scholars can submit abstract write-ups for the poster competition.</p>
-          </div>
-
-          <div className="poster-card-wrapper">
-            <div className="poster-perk">
-              <span className="prize-badge">1st Prize</span>
-              <h3>Rs. 5,000</h3>
-              <p>Best Poster Award + Certificate</p>
-            </div>
-            <div className="poster-perk">
-              <span className="prize-badge">2nd Prize</span>
-              <h3>Rs. 3,000</h3>
-              <p>Second Best + Certificate</p>
-            </div>
-            <div className="poster-perk">
-              <span className="prize-badge">3rd Prize</span>
-              <h3>Rs. 2,000</h3>
-              <p>Third Best + Certificate</p>
-            </div>
-          </div>
-
-          <PosterGuidelines />
-        </div>
-      </section>
 
       {/* Registration Form Section */}
       <section className="section register-section" ref={registerSectionRef} id="register">
