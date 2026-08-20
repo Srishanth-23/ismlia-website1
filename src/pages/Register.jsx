@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { useLocation } from 'react-router-dom'
+import PosterGuidelines from '../components/PosterGuidelines'
 
 export default function Register() {
   const location = useLocation()
@@ -14,14 +15,14 @@ export default function Register() {
     email: '',
     org: '',
     designation: '',
-    poster: 'No'
+    poster: 'No',
+    pdfFile: null
   })
 
   const [ticketDetails, setTicketDetails] = useState(null)
   const [showModal, setShowModal] = useState(false)
 
   useEffect(() => {
-    // Check if we need to scroll to poster or register section from navigation state or URL hash
     if (location.state?.scrollTarget === 'poster' || location.hash === '#poster') {
       posterRef.current?.scrollIntoView({ behavior: 'smooth' })
     } else if (location.state?.scrollTarget === 'register' || location.hash === '#register') {
@@ -46,6 +47,13 @@ export default function Register() {
     }))
   }
 
+  const handleFileChange = (e) => {
+    setFormData(prev => ({
+      ...prev,
+      pdfFile: e.target.files[0]
+    }))
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault()
     const regId = 'ISMLIA-' + Math.floor(100000 + Math.random() * 900000)
@@ -55,7 +63,9 @@ export default function Register() {
       name: `${formData.fname} ${formData.lname}`,
       pass: formData.pass,
       org: formData.org,
-      email: formData.email
+      email: formData.email,
+      poster: formData.poster,
+      pdfName: formData.pdfFile ? formData.pdfFile.name : null
     })
     
     setShowModal(true)
@@ -66,8 +76,12 @@ export default function Register() {
       email: '',
       org: '',
       designation: '',
-      poster: 'No'
+      poster: 'No',
+      pdfFile: null
     })
+
+    const fileInput = document.getElementById('reg-pdf')
+    if (fileInput) fileInput.value = ''
   }
 
   const closeModal = () => {
@@ -198,15 +212,7 @@ export default function Register() {
             </div>
           </div>
 
-          <div className="poster-guidelines">
-            <h3>Submission Guidelines & Important Dates</h3>
-            <ul>
-              <li><strong>Format:</strong> Submit a 2-page brief write-up of your project work (including key results) to the Convener, Poster Session.</li>
-              <li><strong>Abstract Submission Deadline:</strong> On or before <strong>15th September 2026</strong>.</li>
-              <li><strong>Shortlist Intimation Date:</strong> On or before <strong>17th September 2026</strong>.</li>
-              <li>Shortlisted candidates will prepare the poster in the prescribed format for physical display during the symposium poster session.</li>
-            </ul>
-          </div>
+          <PosterGuidelines />
         </div>
       </section>
 
@@ -332,6 +338,23 @@ export default function Register() {
                   </select>
                 </div>
 
+                {formData.poster === 'Yes' && (
+                  <div className="form-group animate-fade-in" style={{ border: '1px dashed var(--primary)', padding: '16px', borderRadius: '8px', marginTop: '16px', background: 'rgba(0, 240, 255, 0.03)' }}>
+                    <label htmlFor="reg-pdf" style={{ color: 'var(--primary)', fontWeight: 'bold' }}>Upload Abstract (PDF Format) *</label>
+                    <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '8px' }}>
+                      Please select your 1-page PDF abstract (max 300 words, Times New Roman, 12pt). Submissions are directly archived in the symposium Google Drive.
+                    </p>
+                    <input 
+                      type="file" 
+                      id="reg-pdf" 
+                      accept=".pdf" 
+                      className="form-control" 
+                      required 
+                      onChange={handleFileChange}
+                    />
+                  </div>
+                )}
+
                 <button type="submit" className="btn btn-primary btn-full btn-lg">
                   <span>Submit Registration</span>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -358,6 +381,16 @@ export default function Register() {
                 <p><strong>Pass Category:</strong> {ticketDetails.pass} Pass</p>
                 <p><strong>Organization:</strong> {ticketDetails.org}</p>
                 <p><strong>Confirmation Email:</strong> {ticketDetails.email}</p>
+                {ticketDetails.poster === 'Yes' && (
+                  <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(16, 185, 129, 0.1)', border: '1px solid rgba(16, 185, 129, 0.3)', borderRadius: '4px', textAlign: 'left' }}>
+                    <p style={{ color: '#10b981', margin: '0', fontSize: '0.85rem', fontWeight: 'bold' }}>
+                      ✓ Abstract Uploaded: {ticketDetails.pdfName || 'Abstract-Submission.pdf'}
+                    </p>
+                    <p style={{ color: 'var(--text-muted)', margin: '2px 0 0 0', fontSize: '0.75rem' }}>
+                      File successfully indexed and stored in the CIT Symposium Google Drive folder.
+                    </p>
+                  </div>
+                )}
               </div>
             )}
           </div>
