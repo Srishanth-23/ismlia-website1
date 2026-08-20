@@ -191,9 +191,9 @@ export default function Register() {
 
 
       {/* Registration Form Section */}
-      <section className="section register-section" ref={registerSectionRef} id="register">
+      <section className="section register-section">
         <div className="container">
-          <div className="register-card-wrapper">
+          <div className="register-card-wrapper" id="register" ref={registerSectionRef}>
             <div className="register-info-col">
               <span className="section-tag">Registration Portal</span>
               <h2>Register for ISMLIA 2026</h2>
@@ -356,13 +356,25 @@ export default function Register() {
                 <p><strong>Organization:</strong> {ticketDetails.org}</p>
                 <p><strong>Confirmation Email:</strong> {ticketDetails.email}</p>
                 {ticketDetails.poster === 'Yes' && (
-                  <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(16, 185, 129, 0.1)', border: '1px solid rgba(16, 185, 129, 0.3)', borderRadius: '4px', textAlign: 'left' }}>
-                    <p style={{ color: '#10b981', margin: '0', fontSize: '0.85rem', fontWeight: 'bold' }}>
-                      ✓ Abstract Uploaded: {ticketDetails.pdfName || 'Abstract-Submission.pdf'}
+                  <div style={{ marginTop: '15px', padding: '16px', background: 'rgba(0, 240, 255, 0.05)', border: '1px dashed var(--primary)', borderRadius: '8px', textAlign: 'left' }}>
+                    <p style={{ color: 'var(--primary)', margin: '0 0 6px 0', fontSize: '0.9rem', fontWeight: 'bold' }}>
+                      📁 Google Drive Submission Folder Created:
                     </p>
-                    <p style={{ color: 'var(--text-muted)', margin: '2px 0 0 0', fontSize: '0.75rem' }}>
-                      File successfully indexed and stored in the CIT Symposium Google Drive folder.
+                    <p style={{ color: '#FFFFFF', margin: '0 0 10px 0', fontSize: '0.8rem', fontFamily: 'monospace', background: 'rgba(0,0,0,0.3)', padding: '6px 10px', borderRadius: '4px' }}>
+                      {`ISMLIA_2026_Posters / ${ticketDetails.regId}_${ticketDetails.name.replace(/\s+/g, '_')}`}
                     </p>
+                    <p style={{ color: 'var(--text-muted)', margin: '0 0 12px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                      Your abstract PDF has been moved and structured into this dedicated drive folder with your participant details.
+                    </p>
+                    <a 
+                      href="https://drive.google.com/drive/folders/1b-T9_6l7E-vE_X-ismlia26-posters-placeholder" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="btn btn-outline btn-full btn-sm"
+                      style={{ fontSize: '0.8rem', padding: '6px 12px', justifyContent: 'center' }}
+                    >
+                      🔗 Open Google Drive Repository
+                    </a>
                   </div>
                 )}
               </div>
