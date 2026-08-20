@@ -69,7 +69,7 @@ export default function Team() {
                 </div>
                 <div className="talk-body">
                   <p><strong>Biography:</strong> {sp.bio}</p>
-                  <p><strong>Talk Summary:</strong> {sp.summary}</p>
+                  <p><strong>Keynote Description:</strong> {sp.summary}</p>
                 </div>
               </div>
             ))}
