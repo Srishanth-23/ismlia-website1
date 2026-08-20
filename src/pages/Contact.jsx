@@ -175,7 +175,7 @@ export default function Contact() {
                 </svg>
               </div>
               <h3>Email Secretariat</h3>
-              <p><strong>Primary Info:</strong> ismlia2026@citchennai.net<br /><strong>Poster Session:</strong> posters.ismlia@citchennai.net</p>
+              <p><strong>Primary:</strong> kirubakarann@citchennai.net<br /><strong>Poster Session:</strong> haripriya.cse@citchennai.net</p>
             </div>
 
             <div className="contact-card">

@@ -38,7 +38,7 @@ export default function Footer() {
           <h4>Organizing Secretariat</h4>
           <p><strong>Chennai Institute of Technology</strong></p>
           <p>Sarathy Nagar, Kundrathur, Chennai - 600069</p>
-          <p>Email: ismlia2026@citchennai.net</p>
+          <p>Email: kirubakarann@citchennai.net / haripriya.cse@citchennai.net</p>
         </div>
       </div>
       <div className="footer-bottom">

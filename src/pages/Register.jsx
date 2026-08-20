@@ -15,7 +15,9 @@ export default function Register() {
     org: '',
     designation: '',
     poster: 'No',
-    pdfFile: null
+    pdfFile: null,
+    txid: '',
+    screenshotFile: null
   })
 
   const [ticketDetails, setTicketDetails] = useState(null)
@@ -52,10 +54,19 @@ export default function Register() {
   }
 
   const handleFileChange = (e) => {
-    setFormData(prev => ({
-      ...prev,
-      pdfFile: e.target.files[0]
-    }))
+    const { id } = e.target
+    const file = e.target.files[0]
+    if (id === 'reg-pdf') {
+      setFormData(prev => ({
+        ...prev,
+        pdfFile: file
+      }))
+    } else if (id === 'reg-screenshot') {
+      setFormData(prev => ({
+        ...prev,
+        screenshotFile: file
+      }))
+    }
   }
 
   const handleSubmit = (e) => {
@@ -69,7 +80,9 @@ export default function Register() {
       org: formData.org,
       email: formData.email,
       poster: formData.poster,
-      pdfName: formData.pdfFile ? formData.pdfFile.name : null
+      txid: formData.txid,
+      pdfName: formData.pdfFile ? formData.pdfFile.name : null,
+      screenshotName: formData.screenshotFile ? formData.screenshotFile.name : null
     })
     
     setShowModal(true)
@@ -81,11 +94,15 @@ export default function Register() {
       org: '',
       designation: '',
       poster: 'No',
-      pdfFile: null
+      pdfFile: null,
+      txid: '',
+      screenshotFile: null
     })
 
     const fileInput = document.getElementById('reg-pdf')
     if (fileInput) fileInput.value = ''
+    const screenshotInput = document.getElementById('reg-screenshot')
+    if (screenshotInput) screenshotInput.value = ''
   }
 
   const closeModal = () => {
@@ -213,6 +230,21 @@ export default function Register() {
                   <span>Poster presentation eligibility for students</span>
                 </div>
               </div>
+
+              {/* QR Code payment display */}
+              <div style={{ marginTop: '30px', padding: '24px', background: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(212, 175, 55, 0.25)', borderRadius: '12px', textAlign: 'center' }}>
+                <span className="section-tag" style={{ color: 'var(--primary)', display: 'inline-block', marginBottom: '8px' }}>Scan & Pay</span>
+                <h4 style={{ color: '#FFFFFF', fontSize: '1.1rem', margin: '0 0 16px 0' }}>Scan QR Code to Pay Fee</h4>
+                <div style={{ background: '#FFFFFF', padding: '12px', borderRadius: '8px', display: 'inline-block', maxWidth: '200px', boxShadow: '0 8px 24px rgba(0,0,0,0.3)', marginBottom: '14px' }}>
+                  <img src="/payment-qr.jpg" alt="Payment QR Code" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '4px' }} />
+                </div>
+                <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', margin: '0 0 8px 0', lineHeight: '1.4' }}>
+                  UPI ID: <strong style={{ color: '#FFFFFF', fontFamily: 'monospace' }}>S363260chennaiins@mscbank</strong>
+                </p>
+                <p style={{ fontSize: '0.8rem', color: 'var(--primary)', margin: 0, fontWeight: 'bold' }}>
+                  Please save the transaction ID and screenshot to upload below.
+                </p>
+              </div>
             </div>
 
             <div className="register-form-col">
@@ -312,6 +344,39 @@ export default function Register() {
                   </select>
                 </div>
 
+                {/* Payment transaction details */}
+                <div style={{ marginTop: '24px', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '20px' }}>
+                  <h4 style={{ color: 'var(--primary)', fontSize: '0.95rem', margin: '0 0 16px 0', textTransform: 'uppercase', letterSpacing: '1px' }}>Payment Verification</h4>
+                  
+                  <div className="form-group">
+                    <label htmlFor="reg-txid">Transaction ID / UTR Number *</label>
+                    <input 
+                      type="text" 
+                      id="reg-txid" 
+                      className="form-control" 
+                      placeholder="e.g. TXN1234567890" 
+                      value={formData.txid}
+                      onChange={handleInputChange}
+                      required 
+                    />
+                  </div>
+
+                  <div className="form-group animate-fade-in" style={{ border: '1px dashed rgba(212, 175, 55, 0.3)', padding: '16px', borderRadius: '8px', background: 'rgba(212, 175, 55, 0.02)', marginTop: '16px' }}>
+                    <label htmlFor="reg-screenshot" style={{ color: 'var(--primary)', fontWeight: 'bold' }}>Upload Payment Screenshot *</label>
+                    <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '8px' }}>
+                      Please upload a screenshot of your payment confirmation (JPEG/PNG).
+                    </p>
+                    <input 
+                      type="file" 
+                      id="reg-screenshot" 
+                      accept="image/*" 
+                      className="form-control" 
+                      required 
+                      onChange={handleFileChange}
+                    />
+                  </div>
+                </div>
+
                 {formData.poster === 'Yes' && (
                   <div className="form-group animate-fade-in" style={{ border: '1px dashed var(--primary)', padding: '16px', borderRadius: '8px', marginTop: '16px', background: 'rgba(0, 240, 255, 0.03)' }}>
                     <label htmlFor="reg-pdf" style={{ color: 'var(--primary)', fontWeight: 'bold' }}>Upload Abstract (PDF Format) *</label>
@@ -360,6 +425,10 @@ export default function Register() {
                 <p><strong>Pass Category:</strong> {ticketDetails.pass} Pass</p>
                 <p><strong>Organization:</strong> {ticketDetails.org}</p>
                 <p><strong>Confirmation Email:</strong> {ticketDetails.email}</p>
+                <p><strong>Transaction UTR:</strong> {ticketDetails.txid}</p>
+                {ticketDetails.screenshotName && (
+                  <p><strong>Receipt:</strong> {ticketDetails.screenshotName} <span style={{ color: 'var(--primary)', fontSize: '0.8rem' }}>(Pending Verification)</span></p>
+                )}
                 {ticketDetails.poster === 'Yes' && (
                   <div style={{ marginTop: '15px', padding: '16px', background: 'rgba(0, 240, 255, 0.05)', border: '1px dashed var(--primary)', borderRadius: '8px', textAlign: 'left' }}>
                     <p style={{ color: 'var(--primary)', margin: '0 0 6px 0', fontSize: '0.9rem', fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '8px' }}>
