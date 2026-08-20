@@ -675,10 +675,6 @@ h1, h2, h3, h4 {
     -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
 }
 
-.ticker-marquee-wrapper::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for Chrome, Safari and Opera */
-}
-
 .ticker-marquee-track {
     display: flex;
     gap: 24px;

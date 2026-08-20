@@ -163,52 +163,50 @@ export default function About() {
           </div>
 
           {/* Horizontal Continuous Moving Ticker Marquee Bar */}
-          <div style={{ marginTop: '50px' }}>
-            <Marquee>
-              <FeatureCard 
-                trackTag="THRUST AREA 01" 
-                title="Digital Twin" 
-                description="Combining first-principles physics models with data-driven ML algorithms for grey-box digital twins and real-time operational excellence."
-              />
-              <FeatureCard 
-                trackTag="THRUST AREA 02" 
-                title="Symbolic Regression" 
-                description="Discovering explicit mathematical expressions directly from sensor measurements to model nonlinear industrial dynamics."
-              />
-              <FeatureCard 
-                trackTag="THRUST AREA 03" 
-                title="Physics-Inspired Neural Networks" 
-                description="Incorporating physics knowledge and mechanistic constraints directly into AI knowledge representation systems."
-              />
-              <FeatureCard 
-                trackTag="THRUST AREA 04" 
-                title="Agentic AI" 
-                description="Autonomous multi-agent architectures for real-time value-driven implementation, process diagnosis, and control."
-              />
+          <Marquee>
+            <FeatureCard 
+              trackTag="THRUST AREA 01" 
+              title="Digital Twin" 
+              description="Combining first-principles physics models with data-driven ML algorithms for grey-box digital twins and real-time operational excellence."
+            />
+            <FeatureCard 
+              trackTag="THRUST AREA 02" 
+              title="Symbolic Regression" 
+              description="Discovering explicit mathematical expressions directly from sensor measurements to model nonlinear industrial dynamics."
+            />
+            <FeatureCard 
+              trackTag="THRUST AREA 03" 
+              title="Physics-Inspired Neural Networks" 
+              description="Incorporating physics knowledge and mechanistic constraints directly into AI knowledge representation systems."
+            />
+            <FeatureCard 
+              trackTag="THRUST AREA 04" 
+              title="Agentic AI" 
+              description="Autonomous multi-agent architectures for real-time value-driven implementation, process diagnosis, and control."
+            />
 
-              {/* Duplicate for infinite seamless horizontal loop */}
-              <FeatureCard 
-                trackTag="THRUST AREA 01" 
-                title="Digital Twin" 
-                description="Combining first-principles physics models with data-driven ML algorithms for grey-box digital twins and real-time operational excellence."
-              />
-              <FeatureCard 
-                trackTag="THRUST AREA 02" 
-                title="Symbolic Regression" 
-                description="Discovering explicit mathematical expressions directly from sensor measurements to model nonlinear industrial dynamics."
-              />
-              <FeatureCard 
-                trackTag="THRUST AREA 03" 
-                title="Physics-Inspired Neural Networks" 
-                description="Incorporating physics knowledge and mechanistic constraints directly into AI knowledge representation systems."
-              />
-              <FeatureCard 
-                trackTag="THRUST AREA 04" 
-                title="Agentic AI" 
-                description="Autonomous multi-agent architectures for real-time value-driven implementation, process diagnosis, and control."
-              />
-            </Marquee>
-          </div>
+            {/* Duplicate for infinite seamless horizontal loop */}
+            <FeatureCard 
+              trackTag="THRUST AREA 01" 
+              title="Digital Twin" 
+              description="Combining first-principles physics models with data-driven ML algorithms for grey-box digital twins and real-time operational excellence."
+            />
+            <FeatureCard 
+              trackTag="THRUST AREA 02" 
+              title="Symbolic Regression" 
+              description="Discovering explicit mathematical expressions directly from sensor measurements to model nonlinear industrial dynamics."
+            />
+            <FeatureCard 
+              trackTag="THRUST AREA 03" 
+              title="Physics-Inspired Neural Networks" 
+              description="Incorporating physics knowledge and mechanistic constraints directly into AI knowledge representation systems."
+            />
+            <FeatureCard 
+              trackTag="THRUST AREA 04" 
+              title="Agentic AI" 
+              description="Autonomous multi-agent architectures for real-time value-driven implementation, process diagnosis, and control."
+            />
+          </Marquee>
         </div>
       </section>
 
