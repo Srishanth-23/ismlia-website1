@@ -2,12 +2,17 @@ import React from 'react'
 import { speakersData } from '../data/speakers'
 
 const committeeData = [
-  { role: "PATRON", name: "Shree Sriram Parthasarathy", desc: "Chairman, Chennai Institute of Technology" },
-  { role: "Co-PATRON", name: "Prof. A. Ramesh", desc: "Principal, Chennai Institute of Technology" },
-  { role: "Program Advisor", name: "Prof. S. Sundaramoorthy", desc: "Prof. (Emeritus), Chennai Institute of Technology" },
-  { role: "CHAIR (International)", name: "Prof. S. Lakshminarayanan", desc: "National University of Singapore (NUS), Singapore" },
-  { role: "CHAIR (National)", name: "Prof. & Head, CSE", desc: "Chennai Institute of Technology" },
-  { role: "CHAIR (National)", name: "Prof. & Head, IT", desc: "Chennai Institute of Technology" }
+  { role: "PATRON", name: "Shree P Sriram", desc: "Chairman, CIT" },
+  { role: "CO-PATRON", name: "Dr. A. Ramesh", desc: "Principal, CIT" },
+  { role: "PROGRAM ADVISOR", name: "Prof. S. Sundaramoorthy", desc: "Prof. (Emeritus), CIT" },
+  { role: "CHAIR (INTERNATIONAL)", name: "Prof. S. Lakshminarayanan", desc: "NUS, Singapore" },
+  { role: "CHAIR (NATIONAL)", name: "Dr. V. Srinivasa Rao", desc: "Dean, School of Computing" },
+  { role: "CO-CHAIRS", name: "Dr. R. Gowri • Dr. B. Sundarambal", desc: "HOD AIML • HOD CSBS" },
+  { role: "SECRETARY", name: "Dr. S. Pavithra", desc: "HOD CSE" },
+  { role: "JOINT SECRETARY", name: "Dr. N. Kandavel", desc: "Program Coordinator AIML" },
+  { role: "TREASURER", name: "Dr. P. Karthikeyan • Mr. G. Senthil Kumar", desc: "Professor AIML • Professor CSBS" },
+  { role: "CONVENER, POSTER SESSION", name: "Dr. N. Kirubakaran • Mrs. Haripriya", desc: "Associate Professor • Assistant Professor" },
+  { role: "MEMBERS", name: "Dr. J. Venkatesh • Dr. S. Veeramalai • Dr. A.R. Kavitha • Dr. E. Kodhai • Dr. G. Shanmugasundaram • Dr. R. Basheer Mohammed", desc: "Organizing Committee Members" }
 ]
 
 const speakerThemes = {

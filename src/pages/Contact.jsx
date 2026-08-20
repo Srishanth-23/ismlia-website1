@@ -11,7 +11,6 @@ export default function Contact() {
 
   const handleInputChange = (e) => {
     const { id, value } = e.target
-    // Map element ids (contact-name, contact-email, etc) to state keys
     const stateKey = id.replace('contact-', '')
     setFormData(prev => ({
       ...prev,
@@ -34,6 +33,51 @@ export default function Contact() {
     setShowModal(false)
   }
 
+  const contactList = [
+    {
+      name: "Dr. R. Gowri",
+      role: "Co-Chair",
+      designation: "HOD, Department of AIML",
+      phone: "+91 9600973073",
+      email: "gowri.r@citchennai.net"
+    },
+    {
+      name: "Dr. P. Karthikeyan",
+      role: "Treasurer",
+      designation: "Professor, Department of AIML",
+      phone: "+91 9677781595",
+      email: "karthikeyan.p@citchennai.net"
+    },
+    {
+      name: "Dr. N. Kandavel",
+      role: "Joint Secretary",
+      designation: "Program Coordinator, Department of AIML",
+      phone: "+91 8072251996",
+      email: "kandavel.n@citchennai.net"
+    },
+    {
+      name: "Mr. G. Senthil Kumar",
+      role: "Treasurer",
+      designation: "Professor, Department of CSBS",
+      phone: "+91 8939618019",
+      email: "senthilkumar.g@citchennai.net"
+    }
+  ]
+
+  const fullCommittee = [
+    { role: "PATRON", name: "Shree P Sriram", desc: "Chairman, CIT" },
+    { role: "CO-PATRON", name: "Dr. A. Ramesh", desc: "Principal, CIT" },
+    { role: "PROGRAM ADVISOR", name: "Prof. S. Sundaramoorthy", desc: "Prof. (Emeritus), CIT" },
+    { role: "CHAIR (INTERNATIONAL)", name: "Prof. S. Lakshminarayanan", desc: "NUS, Singapore" },
+    { role: "CHAIR (NATIONAL)", name: "Dr. V. Srinivasa Rao", desc: "Dean, School of Computing" },
+    { role: "CO-CHAIRS", name: "Dr. R. Gowri • Dr. B. Sundarambal", desc: "HOD AIML • HOD CSBS" },
+    { role: "SECRETARY", name: "Dr. S. Pavithra", desc: "HOD CSE" },
+    { role: "JOINT SECRETARY", name: "Dr. N. Kandavel", desc: "Program Coordinator AIML" },
+    { role: "TREASURER", name: "Dr. P. Karthikeyan • Mr. G. Senthil Kumar", desc: "Professor AIML • Professor CSBS" },
+    { role: "CONVENER, POSTER SESSION", name: "Dr. N. Kirubakaran • Mrs. Haripriya", desc: "Associate Professor • Assistant Professor" },
+    { role: "MEMBERS", name: "Dr. J. Venkatesh • Dr. S. Veeramalai • Dr. A.R. Kavitha • Dr. E. Kodhai • Dr. G. Shanmugasundaram • Dr. R. Basheer Mohammed", desc: "Organizing Committee Members" }
+  ]
+
   return (
     <div className="contact-page">
       {/* Page Header Banner */}
@@ -45,13 +89,32 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Main Contact Directory */}
       <section className="section contact-section">
         <div className="container">
           <div className="section-header">
             <span className="section-tag">Secretariat Desk</span>
             <h2 className="section-title">Reach Out to Us</h2>
             <p className="section-desc">Have questions regarding registration, poster paper submissions, or venue directions? We are here to assist you.</p>
+          </div>
+
+          {/* Quick Hotline Contacts Grid */}
+          <div className="contact-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', marginBottom: '60px' }}>
+            {contactList.map((contact, idx) => (
+              <div className="contact-card" key={idx} style={{ textAlign: 'center', border: '1px solid rgba(212, 175, 55, 0.2)' }}>
+                <div className="contact-icon" style={{ fontSize: '2rem', marginBottom: '12px' }}>📞</div>
+                <span className="committee-role" style={{ marginBottom: '8px' }}>{contact.role}</span>
+                <h3>{contact.name}</h3>
+                <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '14px' }}>{contact.designation}</p>
+                <a 
+                  href={`tel:${contact.phone.replace(/\s+/g, '')}`} 
+                  className="btn btn-outline btn-full"
+                  style={{ display: 'inline-flex', justifyContent: 'center', alignItems: 'center', gap: '8px', fontSize: '0.9rem' }}
+                >
+                  <span>{contact.phone}</span>
+                </a>
+              </div>
+            ))}
           </div>
 
           <div className="contact-grid">
@@ -74,8 +137,26 @@ export default function Contact() {
             </div>
           </div>
 
+          {/* Complete Organizing Committee Directory */}
+          <div style={{ marginTop: '80px' }}>
+            <div className="section-header">
+              <span className="section-tag">Symposium Structure</span>
+              <h2 className="section-title">Organizing Committee</h2>
+            </div>
+            
+            <div className="committee-grid" style={{ marginTop: '30px' }}>
+              {fullCommittee.map((member, index) => (
+                <div key={index} className="committee-card">
+                  <span className="committee-role">{member.role}</span>
+                  <h3>{member.name}</h3>
+                  <p>{member.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Interactive Contact Form */}
-          <div className="register-card-wrapper" style={{ marginTop: '60px' }}>
+          <div className="register-card-wrapper" style={{ marginTop: '80px' }}>
             <div className="register-info-col">
               <span className="section-tag">Direct Inquiry</span>
               <h2>Send a Message</h2>
