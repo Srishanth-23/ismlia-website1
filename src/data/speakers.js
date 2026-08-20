@@ -2,61 +2,61 @@ export const speakersData = {
   "1": {
     id: "1",
     badge: "LECTURE I",
-    avatar: "VJ",
-    image: "/ChatGPT Image Aug 17, 2026, 06_16_09 AM.png",
-    name: "Dr. Vijaysai Prasad",
-    org: "L&T Constructions, India",
-    designation: "JGM & Head, Water Technology Centre, L&T Constructions, Chennai, India",
-    topic: "Operational Excellence in Water Industry through Grey Box Digital Twins",
-    bio: "Dr. Vijaysai Prasad (VJ) heads WTC Kanchipuram at L&T's WET business. With nearly three decades of experience in industrial research, he holds a Ph.D. from IIT Bombay, served at GE Global Research Center, GE Water, and SUEZ Water Technologies. He serves on jury committees for DST desalination proposals and Steering Committees for IWA & Digital Water India.",
-    summary: "Presents the principles and implementation of grey-box digital twins, combining first-principles physics models with data-driven AI/ML, using a reverse osmosis (RO) desalination plant as a real industrial case study."
+    avatar: "RG",
+    image: "/ChatGPT Image Aug 17, 2026, 06_38_37 AM.png",
+    name: "Prof. Ravindra Gudi",
+    org: "IIT Bombay, India",
+    designation: "AI and ML Chair Professor & Deputy Director, IIT Bombay, India",
+    topic: "Incorporating Physics in AI based Knowledge Representation Systems",
+    bio: "Dr. Ravindra Gudi is currently the Deputy Director (equivalent to a university Provost) at IIT Bombay. In this responsibility, he reports to the Director (equivalent of University President), and works with the Deans, the faculty on various aspects of research and the university budget. Prior to this position, he was the Dean (Alumni and Corporate Relations), Professor-in-Charge of the IIT Bombay Research Park Foundation, Head at Department of Chemical Engineering, and the Professor-in-Charge of Continuing Education and Quality Improvement Program at IIT Bombay. He also currently holds the Institute Chair Position in Artificial Intelligence and Machine Learning. He earned his B-Tech and M-Tech degrees from IIT Bombay and a PhD from the University of Alberta (1995). His research interests lie broadly in process systems engineering & green engineering, i.e. modelling, optimization, control and fault diagnosis of process systems, sustainability in industrial practices. He serves on the faculty in Department of Chemical Engineering. Dr. Gudi is a Fellow of the Indian National Academy of Engineering, National Academy of Sciences India, and the Indian Institute of Chemical Engineers, and also a recipient of several awards including the Canadian Commonwealth Fellowship by the Government of Canada (1991-1995), Lovraj Kumar Memorial Award for promotion of Industry Academia Interaction, (July 1998 - January 1999) Manudhane Applied Research Award (2006), Herdillia Award for Excellence in Basic Chemical Engineering (2009). He is also an Associate Editor of the IFAC journal of Process Control and Guest Editor for Control Engineering Practice. He serves on several technical committees of IFAC. He has also been an active consultant to the industry in India and abroad. Dr. Gudi has served as a Visiting Professor at the Department of Chemical Engineering, University of Alberta, Canada (1997), Department of Chemical Engineering, University of Wisconsin- Madison (2003-04), and the EECE Department as Washington University in St. Louis. Dr. Gudi has published over close to 200 Scopus indexed papers and has 11 US patents to his credit, in various areas of process systems engineering. He has guided over 60 PhD and M.Tech students in their research at IIT Bombay.",
+    summary: "AI & ML based approaches to reconstruction & prediction, with a view to assist decision making, have re-emerged with a stronger potential and application spectrum. These approaches have relied quite heavily on the power of modelling tools, both statistical as well as other advanced AI based tools. However, in any decision making, there are considerations related to credibility and completeness of the information sources, which can additionally be brought in, to help in the AI and ML based modelling approaches. This talk will explore such possibilities and pose (perhaps awkward) questions on the adequacy of AI and ML approaches as they exist today. The talk will motivate alternate complementing modelling paradigms, that will bring in physics / mechanistic knowledge in modelling step, that may help to generate a relatively accurate reconstruction and prediction with a view to improved decision making. Illustrative examples in chemical engineering from industrial as well as academic literature will seek to reinforce some of the proposed ideas."
   },
   "2": {
     id: "2",
     badge: "LECTURE II",
+    avatar: "VJ",
+    image: "/ChatGPT Image Aug 17, 2026, 06_16_09 AM.png",
+    name: "Dr. Vijaysai Prasad",
+    org: "L&T Constructions, India",
+    designation: "JGM and Head, Water Technology Centre, L&T Constructions, Chennai, India",
+    topic: "Operational Excellence in Water Industry through Grey Box Digital Twins",
+    bio: "Dr. Vijaysai Prasad (VJ) heads the Water Technology Centre (WTC), Kanchipuram, the Centre of Excellence for R&D, Digital Solutions, and Knowledge Management for L&T's Water & Effluent Treatment (WET) business. WTC develops next-generation water and wastewater technologies through a multidisciplinary team of scientists, technologists, and engineers. With nearly three decades of experience in industrial research, innovation, and technology commercialization, Dr. Vijaysai is a Chemical Engineer with a Ph.D. in System Identification and Control from IIT Bombay. He is a Distinguished Alumnus of NIT Karnataka (NITK) and serves on its Board of Studies. Following a research assignment at the National University of Singapore, he joined GE Global Research Center, Bengaluru, contributing to technology development across diverse industrial sectors. He later led the South Asia Technology Team for GE Water and subsequently served as Technical Director at SUEZ Water Technologies & Solutions, driving global digital initiatives. Dr. Vijaysai joined L&T's Water & Effluent Treatment business in May 2021 following GE's water business divestment. He holds several patents and technical publications, serves as a jury member for DST-funded desalination proposals, is a Certified Six Sigma Trainer, and is a member of the Steering Committees of the International Water Association (IWA) Climate Smart Utilities Specialist Group and Digital Water India (DWI).",
+    summary: "As process plants evolved, increasing demands for quality, efficiency, reliability, and lower OPEX drove process control beyond conventional automation into advanced digital frameworks capable of optimizing multiple objectives. Traditionally, digital solutions have relied on either physics-based (first principles) models or data-driven models, each with distinct strengths and limitations. Recent advances in AI/ML are increasingly bridging these approaches through grey-box digital twins, which combine process knowledge with operational data to deliver more accurate, adaptive, and robust decision support. This talk presents the principles and implementation of grey-box digital twins, using a reverse osmosis (RO) desalination plant as a real industrial case study. It demonstrates how integrating first-principles modelling with AI/ML can improve process performance while enhancing operational efficiency and decision-making."
+  },
+  "3": {
+    id: "3",
+    badge: "LECTURE III",
     avatar: "LK",
     image: "/ChatGPT Image Aug 17, 2026, 06_20_39 AM.png",
     name: "Dr. Kanchi Lakshmi Kiran",
     org: "DBS, Singapore",
     designation: "Senior Vice President, Regional Business Analytics, DBS, Singapore",
     topic: "AI Transformation Era: Role of Agentic AI and its role of Real-Time Value-Driven implementation in Industrial Applications",
-    bio: "Technology leader with 16 years of experience across AI, big data, and engineering. Currently leads Agentic AI at DBS, Singapore. Previously Lead/Senior Data Scientist at McLaren Applied Technologies and Senior Research Engineer at Yokogawa. Holds 4 international patents and a Ph.D. from NUS.",
-    summary: "Explores the shift to autonomous goal-directed Agentic AI, multi-agent frameworks, operational safety guardrails, shadow rollouts, and real-time value-driven implementations across energy, smart manufacturing, and finance."
+    bio: "Dr. Kanchi Lakshmi Kiran is a distinguished technology leader with 16 years of global research and industrial experience across AI, big data analytics, and advanced engineering. Currently at DBS, Dr. Kiran leads the development, deployment, and industrialization of Agentic AI, Generative AI, and Machine Learning applications within Consumer Banking (CBG) and Wealth Management. His mandate includes establishing robust, Responsible AI frame works to deploy autonomous financial workflows safely at enterprise scale. Prior to his current role, Dr. Kiran drove high-performance data science initiatives as a Lead/Senior Data Scientist at McLaren Applied Technologies and worked as a Senior Research Engineer at Yokogawa. His deep expertise spans diverse industries, including healthcare, energy, transport, smart manufacturing, and the Industrial Internet of Things (IIoT)—consistently bridging the gap between complex mathematical modeling and real-world software execution. An innovator with global recognition, Dr. Kiran holds four international patents, has been widely published in scientific journals, and has secured prestigious government research grants. He holds a Bachelor of Engineering (B.E. Hons) in Chemical Engineering from the National Institute of Technology, Durgapur, and a PhD in Chemical and Biomolecular Engineering from the National University of Singapore.",
+    summary: "• Introduction to AI Transformation Era shifts: Systems from passive tools to autonomous, goal-directed Agentic AI.\n• Core capabilities of Agentic AI/Implementation frameworks including practical challenges in organizations: Powered by dynamic planning, tool use, and self-reflection, agents execute multi-step workflows. Implementation relies on multi-agent architectures, though engineering faces challenges like system brittleness and data coordination.\n• Exemplification with Real world applications: Industrially, agents drive real-time in terms productivity, time to market, customer experience.\n• AI Governance framework: To manage this autonomy safely, enterprises enforce strict governance via hardcoded operational guardrails and \"least privilege\" access. Finally, continuous post-deployment monitoring—using shadow rollouts and dedicated critic agents—ensures operational safety, tracking decision logs to prevent runaway behaviors."
   },
-  "3": {
-    id: "3",
-    badge: "LECTURE III",
+  "4": {
+    id: "4",
+    badge: "LECTURE IV",
     avatar: "RR",
     image: "/ChatGPT Image Aug 17, 2026, 06_24_35 AM.png",
     name: "Dr. Raghuraj K Rao",
     org: "AKXA Tech, India",
     designation: "Managing Director and Head Technical Services, AKXA TECH Pvt. Ltd, Kolhapur, India",
     topic: "Multi Agent Systems for Process Diagnosis and Control",
-    bio: "Chemical Engineer (BE: NITK Surathkal, M.Tech: IIT Bombay, Ph.D.: NUS Singapore) with over 25 years of academic, research, and commissioning experience. Founder Director & MD of AKXA Tech, delivering algorithm-based analytics tools for manufacturing stability and energy efficiency.",
-    summary: "Provides a bird's-eye view on operational excellence, process fault diagnosis, prediction, and real-time process optimization using Agentic Multi-Agent Systems in Industry 4.0 setups."
+    bio: "Dr. Raghuraj Rao is a Chemical Engineer by qualification (BE : NITK Surathkal, M.Tech : IIT Bombay, PhD : National University of Singapore), with specialisation in Process Data Analytics, Process Modelling and Optimisation. He has overall, more than 25 Years of academic, research, plant commissioning, process optimisation and entrepreneurial experience. He is a founder director and MD of AKXA Tech Pvt Ltd., a tech StartUp company recognized by Govt. of India. AKXA Tech develops and delivers unique Algorithm based Data analytics Tools/Services to manufacturing sector enabling plant team to take quicker/targeted decisions for enhancing plant stability, productivity and energy efficiency.",
+    summary: "With increasing focus on AI/ML based digitalization and automation solutions, industries are actively focussing on operational excellence leading to process cost reduction. The large scale manufacturing setups, including process plants, are refocussing on enhancing productivty, plant energy efficiency, higher auto utilisation and reducing time from mine to market. Information Revolution of 1990s has catapaulted, in 2020, into a next generation Industrial Revolution (Industry 4.0). Artificial Intelegence, Big Data Analytics and Industrial Internet of Things (IIoT) are projected to take manufacturing sector into higher level of productivty and efficiency. “Agentic Systems“ driven by unique AI/ML techniques are now being harnessed to enhance the performance. Process fauly diagnosis, prediction, advance multi-agent control and real time process optimization are making serious inroads in Industrial digital land scape. This presentation attempts to bring all these challenging areas and key issues into perspective and takes a birds eye view on Possibility and Feasibility of benefiting from ML with process diagnosis case and process control studies from different manufacturing sectors."
   },
-  "4": {
-    id: "4",
-    badge: "LECTURE IV",
+  "5": {
+    id: "5",
+    badge: "LECTURE V",
     avatar: "WZ",
     image: "/ChatGPT Image Aug 17, 2026, 06_32_37 AM.png",
     name: "Prof. Wu Zhe",
     org: "NUS, Singapore",
     designation: "Assistant Professor, Department of Chemical & Biomolecular Engineering, National University of Singapore (NUS)",
     topic: "Machine Learning in Model Predictive Control: Theoretical and Practical Challenges",
-    bio: "Ph.D. from UCLA (2020), postdoctoral researcher at UCLA Computer Science. Published over 50 peer-reviewed articles, recipient of NUS Outstanding Early Career Award (2024), AIChE Singapore Young Faculty Award (2024), and Stanford Top 2% Scientist (2024, 2025).",
-    summary: "Presents a general framework of using Recurrent Neural Networks (RNN) for modeling nonlinear dynamic systems within Model Predictive Control (MPC), addressing data scarcity via physics-informed ML and transfer learning."
-  },
-  "5": {
-    id: "5",
-    badge: "LECTURE V",
-    avatar: "RG",
-    image: "/ChatGPT Image Aug 17, 2026, 06_38_37 AM.png",
-    name: "Prof. Ravindra Gudi",
-    org: "IIT Bombay, India",
-    designation: "AI and ML Chair Professor & Deputy Director, IIT Bombay, India",
-    topic: "Hybrid First-Principles ML Models for Chemical Process Operations",
-    bio: "Deputy Director (Provost equivalent) at IIT Bombay. Former Dean (Alumni & Corporate Relations) and Head of Chemical Engineering. Fellow of INAE, NASI, and IIChE. Author of 200+ Scopus papers and 11 US patents.",
-    summary: "Explores complementing data-driven AI/ML approaches with physics/mechanistic knowledge representation systems to improve model credibility, accuracy, and industrial decision-making."
+    bio: "Dr. Zhe Wu is an Assistant Professor in the Department of Chemical and Biomolecular Engineering at the National University of Singapore (NUS). He earned his B.S. in Control Science and Engineering from Zhejiang University (2016) and his Ph.D. in Chemical Engineering from UCLA (2020), followed by a postdoctoral position in UCLA’s Computer Science department. His research focuses on process systems engineering, including process modeling, optimization, control, and machine learning applications in chemical engineering. He has published over 50 peer-reviewed articles and secured more than SGD 2 million in research funding from Singapore funding agencies: ASTAR, NRF, MOE, and chemical and pharmaceutical companies. Dr. Wu serves on the editorial board of Digital Chemical Engineering, Chemical Engineering Research and Design, and is on the Early Career Advisory Board of Control Engineering Practice. He has received the Outstanding Early Career Award from NUS (2024), the Outstanding Young Faculty Award from AIChE Singapore Local Section (2024), and was named to the Stanford/Elsevier Top 2% Scientists List (2024, 2025).",
+    summary: "Machine learning is opening new opportunities in advanced process control for chemical systems. Model predictive control (MPC), the gold standard in industrial practice, typically relies on linear empirical models to compute optimal control actions under process and actuator constraints. However, the inherent nonlinearity of chemical processes often requires nonlinear models for efficient control. While first-principles modeling can capture these nonlinearities, it is challenging to implement for complex or poorly understood systems. Machine learning methods, such as neural networks, offer an efficient data-driven alternative for building nonlinear dynamic models, improving MPC performance in such settings. In this talk, we will present our research work on the use of ML tools in model predictive control of nonlinear dynamics systems, along with new solutions to key theoretical and practical challenges in ML-based MPC. Specifically, we will present: a) a general framework of using recurrent neural networks (RNN) for modeling nonlinear systems within MPC, b) theoretical results on the generalization error of RNN models and closed-loop stability of RNN-MPC using statistical learning theory, and c) novel ML modeling methods including physics-informed ML and transfer learning to address practical challenges such as data scarcity in process modeling and control. Throughout the talk, we will present applications of our methods to chemical and pharmaceutical processes to demonstrate their effectiveness, and provide new insights to many emerging pratical challenges in implementing ML-based MPC."
   }
 }
