@@ -304,16 +304,16 @@ export default function Register() {
               </div>
 
               {/* QR Code payment display */}
-              <div style={{ marginTop: '30px', padding: '24px', background: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(212, 175, 55, 0.25)', borderRadius: '12px', textAlign: 'center' }}>
-                <span className="section-tag" style={{ color: 'var(--primary)', display: 'inline-block', marginBottom: '8px' }}>Scan & Pay</span>
-                <h4 style={{ color: '#FFFFFF', fontSize: '1.1rem', margin: '0 0 16px 0' }}>Scan QR Code to Pay Fee</h4>
-                <div style={{ background: '#FFFFFF', padding: '12px', borderRadius: '8px', display: 'inline-block', maxWidth: '200px', boxShadow: '0 8px 24px rgba(0,0,0,0.3)', marginBottom: '14px' }}>
+              <div style={{ marginTop: '20px', padding: '16px 20px', background: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(212, 175, 55, 0.25)', borderRadius: '12px', textAlign: 'center' }}>
+                <span className="section-tag" style={{ color: 'var(--primary)', display: 'inline-block', marginBottom: '6px', fontSize: '0.75rem' }}>Scan & Pay</span>
+                <h4 style={{ color: '#FFFFFF', fontSize: '1rem', margin: '0 0 12px 0' }}>Scan QR Code to Pay Fee</h4>
+                <div style={{ background: '#FFFFFF', padding: '8px', borderRadius: '6px', display: 'inline-block', maxWidth: '140px', boxShadow: '0 6px 20px rgba(0,0,0,0.3)', marginBottom: '10px' }}>
                   <img src="/payment-qr.jpg" alt="Payment QR Code" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '4px' }} />
                 </div>
-                <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', margin: '0 0 8px 0', lineHeight: '1.4' }}>
-                  UPI ID: <strong style={{ color: '#FFFFFF', fontFamily: 'monospace' }}>S363260chennaiins@mscbank</strong>
+                <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', margin: '0 0 6px 0', lineHeight: '1.4' }}>
+                  UPI ID: <strong style={{ color: '#FFFFFF', fontFamily: 'monospace', fontSize: '0.8rem' }}>S363260chennaiins@mscbank</strong>
                 </p>
-                <p style={{ fontSize: '0.8rem', color: 'var(--primary)', margin: 0, fontWeight: 'bold' }}>
+                <p style={{ fontSize: '0.78rem', color: 'var(--primary)', margin: 0, fontWeight: 'bold' }}>
                   Please save the transaction ID and screenshot to upload below.
                 </p>
               </div>
@@ -502,35 +502,6 @@ export default function Register() {
                 <p><strong>Transaction UTR:</strong> {ticketDetails.txid}</p>
                 {ticketDetails.screenshotName && (
                   <p><strong>Receipt:</strong> {ticketDetails.screenshotName} <span style={{ color: 'var(--primary)', fontSize: '0.8rem' }}>(Pending Verification)</span></p>
-                )}
-                {ticketDetails.poster === 'Yes' && (
-                  <div style={{ marginTop: '15px', padding: '16px', background: 'rgba(0, 240, 255, 0.05)', border: '1px dashed var(--primary)', borderRadius: '8px', textAlign: 'left' }}>
-                    <p style={{ color: 'var(--primary)', margin: '0 0 6px 0', fontSize: '0.9rem', fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
-                      </svg>
-                      Google Drive Submission Folder Created:
-                    </p>
-                    <p style={{ color: '#FFFFFF', margin: '0 0 10px 0', fontSize: '0.8rem', fontFamily: 'monospace', background: 'rgba(0,0,0,0.3)', padding: '6px 10px', borderRadius: '4px' }}>
-                      {`ISMLIA_2026_Posters / ${ticketDetails.regId}_${ticketDetails.name.replace(/\s+/g, '_')}`}
-                    </p>
-                    <p style={{ color: 'var(--text-muted)', margin: '0 0 12px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
-                      Your abstract PDF has been moved and structured into this dedicated drive folder with your participant details.
-                    </p>
-                    <a 
-                      href={ticketDetails.driveFolderUrl || "https://drive.google.com/drive/folders/1b-T9_6l7E-vE_X-ismlia26-posters-placeholder"} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="btn btn-outline btn-full btn-sm"
-                      style={{ fontSize: '0.8rem', padding: '6px 12px', justifyContent: 'center', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
-                    >
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                      </svg>
-                      Open Google Drive Folder
-                    </a>
-                  </div>
                 )}
               </div>
             )}
