@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import FeatureCard from '../components/FeatureCard'
+import Marquee from '../components/Marquee'
 
 const timelineData = [
   {
@@ -162,8 +163,8 @@ export default function About() {
           </div>
 
           {/* Horizontal Continuous Moving Ticker Marquee Bar */}
-          <div className="ticker-marquee-wrapper" style={{ marginTop: '50px' }}>
-            <div className="ticker-marquee-track">
+          <div style={{ marginTop: '50px' }}>
+            <Marquee>
               <FeatureCard 
                 trackTag="THRUST AREA 01" 
                 title="Digital Twin" 
@@ -206,7 +207,7 @@ export default function About() {
                 title="Agentic AI" 
                 description="Autonomous multi-agent architectures for real-time value-driven implementation, process diagnosis, and control."
               />
-            </div>
+            </Marquee>
           </div>
         </div>
       </section>

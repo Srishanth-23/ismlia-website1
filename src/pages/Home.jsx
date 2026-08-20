@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import FeatureCard from '../components/FeatureCard'
 import { speakersData } from '../data/speakers'
+import Marquee from '../components/Marquee'
 
 // Target date of the symposium: 25th September 2026
 const targetDate = new Date("September 25, 2026 09:00:00")
@@ -131,52 +132,50 @@ export default function Home({ onSelectSpeaker }) {
           </div>
 
           {/* Horizontal Continuous Moving Ticker Marquee Bar */}
-          <div className="ticker-marquee-wrapper">
-            <div className="ticker-marquee-track">
-              <FeatureCard 
-                trackTag="THRUST AREA 01" 
-                title="Digital Twin" 
-                description="Combining first-principles physics models with data-driven ML algorithms for grey-box digital twins and real-time operational excellence."
-              />
-              <FeatureCard 
-                trackTag="THRUST AREA 02" 
-                title="Symbolic Regression" 
-                description="Discovering explicit mathematical expressions directly from sensor measurements to model nonlinear industrial dynamics."
-              />
-              <FeatureCard 
-                trackTag="THRUST AREA 03" 
-                title="Physics-Inspired Neural Networks" 
-                description="Incorporating physics knowledge and mechanistic constraints directly into AI knowledge representation systems."
-              />
-              <FeatureCard 
-                trackTag="THRUST AREA 04" 
-                title="Agentic AI" 
-                description="Autonomous multi-agent architectures for real-time value-driven implementation, process diagnosis, and control."
-              />
+          <Marquee>
+            <FeatureCard 
+              trackTag="THRUST AREA 01" 
+              title="Digital Twin" 
+              description="Combining first-principles physics models with data-driven ML algorithms for grey-box digital twins and real-time operational excellence."
+            />
+            <FeatureCard 
+              trackTag="THRUST AREA 02" 
+              title="Symbolic Regression" 
+              description="Discovering explicit mathematical expressions directly from sensor measurements to model nonlinear industrial dynamics."
+            />
+            <FeatureCard 
+              trackTag="THRUST AREA 03" 
+              title="Physics-Inspired Neural Networks" 
+              description="Incorporating physics knowledge and mechanistic constraints directly into AI knowledge representation systems."
+            />
+            <FeatureCard 
+              trackTag="THRUST AREA 04" 
+              title="Agentic AI" 
+              description="Autonomous multi-agent architectures for real-time value-driven implementation, process diagnosis, and control."
+            />
 
-              {/* Duplicate for infinite seamless horizontal loop */}
-              <FeatureCard 
-                trackTag="THRUST AREA 01" 
-                title="Digital Twin" 
-                description="Combining first-principles physics models with data-driven ML algorithms for grey-box digital twins and real-time operational excellence."
-              />
-              <FeatureCard 
-                trackTag="THRUST AREA 02" 
-                title="Symbolic Regression" 
-                description="Discovering explicit mathematical expressions directly from sensor measurements to model nonlinear industrial dynamics."
-              />
-              <FeatureCard 
-                trackTag="THRUST AREA 03" 
-                title="Physics-Inspired Neural Networks" 
-                description="Incorporating physics knowledge and mechanistic constraints directly into AI knowledge representation systems."
-              />
-              <FeatureCard 
-                trackTag="THRUST AREA 04" 
-                title="Agentic AI" 
-                description="Autonomous multi-agent architectures for real-time value-driven implementation, process diagnosis, and control."
-              />
-            </div>
-          </div>
+            {/* Duplicate for infinite seamless horizontal loop */}
+            <FeatureCard 
+              trackTag="THRUST AREA 01" 
+              title="Digital Twin" 
+              description="Combining first-principles physics models with data-driven ML algorithms for grey-box digital twins and real-time operational excellence."
+            />
+            <FeatureCard 
+              trackTag="THRUST AREA 02" 
+              title="Symbolic Regression" 
+              description="Discovering explicit mathematical expressions directly from sensor measurements to model nonlinear industrial dynamics."
+            />
+            <FeatureCard 
+              trackTag="THRUST AREA 03" 
+              title="Physics-Inspired Neural Networks" 
+              description="Incorporating physics knowledge and mechanistic constraints directly into AI knowledge representation systems."
+            />
+            <FeatureCard 
+              trackTag="THRUST AREA 04" 
+              title="Agentic AI" 
+              description="Autonomous multi-agent architectures for real-time value-driven implementation, process diagnosis, and control."
+            />
+          </Marquee>
 
           <div style={{ textAlign: 'center', marginTop: '40px' }}>
             <Link to="/about" className="btn btn-outline">Explore Full About & Schedule →</Link>
