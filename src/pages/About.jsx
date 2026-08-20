@@ -146,20 +146,26 @@ export default function About() {
             </p>
           </div>
 
-          <div className="about-text-content">
-            <p>
-              Although ML applications are ubiquitous in social networks, business, medical, and financial data analysis,
-              it is beginning to establish itself as an inevitable tool to address and solve complex problems in industries.
-              With the automation of industrial operations, capturing and storing of sensor measurement data has become
-              relatively easier. As a result of this, many industries have voluminous data that can be processed to get
-              a deeper insight into plant conditions and effectively used to improve the quality of operation.
-            </p>
-            <p>
-              It is in this context that industries are beginning to look at ML as a potential tool to address complex
-              problems that conventional methods have failed to solve. This International Symposium <strong>ISMLIA 2026</strong>{' '}
-              provides a platform for participants from industry, academia, and the research community to get a significant
-              overview of potential areas for industrial applications of ML algorithms.
-            </p>
+          <div className="about-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px', marginTop: '40px', marginBottom: '50px' }}>
+            <div className="about-card" style={{ background: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(255, 255, 255, 0.05)', borderLeft: '4px solid var(--primary)', borderRadius: '12px', padding: '32px', backdropFilter: 'blur(10px)', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.2)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
+                <span style={{ fontSize: '1.5rem' }}>🏭</span>
+                <h3 style={{ fontSize: '1.25rem', color: '#FFFFFF', margin: 0, fontWeight: '700' }}>Industrial Paradigm Shift</h3>
+              </div>
+              <p style={{ color: 'var(--text-muted)', lineHeight: '1.7', fontSize: '0.98rem', margin: 0 }}>
+                Although ML applications are ubiquitous in social networks, business, medical, and financial data analysis, it is beginning to establish itself as an inevitable tool to address and solve complex problems in industries. With the automation of industrial operations, capturing and storing sensor measurement data has become relatively easier.
+              </p>
+            </div>
+
+            <div className="about-card" style={{ background: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(255, 255, 255, 0.05)', borderLeft: '4px solid #00f0ff', borderRadius: '12px', padding: '32px', backdropFilter: 'blur(10px)', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.2)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
+                <span style={{ fontSize: '1.5rem' }}>🔬</span>
+                <h3 style={{ fontSize: '1.25rem', color: '#FFFFFF', margin: 0, fontWeight: '700' }}>Our Mission & Objective</h3>
+              </div>
+              <p style={{ color: 'var(--text-muted)', lineHeight: '1.7', fontSize: '0.98rem', margin: 0 }}>
+                It is in this context that industries are beginning to look at ML as a potential tool to address complex problems that conventional methods have failed to solve. The International Symposium <strong style={{ color: 'var(--primary)' }}>ISMLIA 2026</strong> provides a platform for participants from industry, academia, and the research community to get a significant overview of potential areas for industrial applications of ML algorithms.
+              </p>
+            </div>
           </div>
 
           {/* Horizontal Continuous Moving Ticker Marquee Bar */}
