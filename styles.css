@@ -961,6 +961,38 @@ h1, h2, h3, h4 {
     color: var(--text-muted);
 }
 
+.committee-member-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.committee-member-item {
+    display: flex;
+    flex-direction: column;
+    border-left: 2.5px solid rgba(255, 255, 255, 0.12);
+    padding-left: 12px;
+    transition: border-color 0.3s;
+}
+
+.committee-card:hover .committee-member-item {
+    border-left-color: var(--primary);
+}
+
+.committee-member-item h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.committee-member-item p {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin: 2px 0 0 0;
+}
+
 /* Detailed Speaker Cards */
 .speaker-detail-list {
     display: flex;

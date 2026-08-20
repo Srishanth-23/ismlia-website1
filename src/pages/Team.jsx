@@ -2,17 +2,80 @@ import React from 'react'
 import { speakersData } from '../data/speakers'
 
 const committeeData = [
-  { role: "PATRON", name: "Shree P Sriram", desc: "Chairman, CIT" },
-  { role: "CO-PATRON", name: "Dr. A. Ramesh", desc: "Principal, CIT" },
-  { role: "PROGRAM ADVISOR", name: "Prof. S. Sundaramoorthy", desc: "Prof. (Emeritus), CIT" },
-  { role: "CHAIR (INTERNATIONAL)", name: "Prof. S. Lakshminarayanan", desc: "NUS, Singapore" },
-  { role: "CHAIR (NATIONAL)", name: "Dr. V. Srinivasa Rao", desc: "Dean, School of Computing" },
-  { role: "CO-CHAIRS", name: "Dr. R. Gowri • Dr. B. Sundarambal", desc: "HOD AIML • HOD CSBS" },
-  { role: "SECRETARY", name: "Dr. S. Pavithra", desc: "HOD CSE" },
-  { role: "JOINT SECRETARY", name: "Dr. N. Kandavel", desc: "Program Coordinator AIML" },
-  { role: "TREASURER", name: "Dr. P. Karthikeyan • Mr. G. Senthil Kumar", desc: "Professor AIML • Professor CSBS" },
-  { role: "CONVENER, POSTER SESSION", name: "Dr. N. Kirubakaran • Mrs. Haripriya", desc: "Associate Professor • Assistant Professor" },
-  { role: "MEMBERS", name: "Dr. J. Venkatesh • Dr. S. Veeramalai • Dr. A.R. Kavitha • Dr. E. Kodhai • Dr. G. Shanmugasundaram • Dr. R. Basheer Mohammed", desc: "Organizing Committee Members" }
+  {
+    role: "PATRON",
+    members: [
+      { name: "Shree P Sriram", desc: "Chairman, CIT" }
+    ]
+  },
+  {
+    role: "CO-PATRON",
+    members: [
+      { name: "Dr. A. Ramesh", desc: "Principal, CIT" }
+    ]
+  },
+  {
+    role: "PROGRAM ADVISOR",
+    members: [
+      { name: "Prof. S. Sundaramoorthy", desc: "Prof. (Emeritus), CIT" }
+    ]
+  },
+  {
+    role: "CHAIR (INTERNATIONAL)",
+    members: [
+      { name: "Prof. S. Lakshminarayanan", desc: "NUS, Singapore" }
+    ]
+  },
+  {
+    role: "CHAIR (NATIONAL)",
+    members: [
+      { name: "Dr. V. Srinivasa Rao", desc: "Dean, School of Computing" }
+    ]
+  },
+  {
+    role: "CO-CHAIRS",
+    members: [
+      { name: "Dr. R. Gowri", desc: "HOD AIML" },
+      { name: "Dr. B. Sundarambal", desc: "HOD CSBS" }
+    ]
+  },
+  {
+    role: "SECRETARY",
+    members: [
+      { name: "Dr. S. Pavithra", desc: "HOD CSE" }
+    ]
+  },
+  {
+    role: "JOINT SECRETARY",
+    members: [
+      { name: "Dr. N. Kandavel", desc: "Program Coordinator AIML" }
+    ]
+  },
+  {
+    role: "TREASURER",
+    members: [
+      { name: "Dr. P. Karthikeyan", desc: "Professor AIML" },
+      { name: "Mr. G. Senthil Kumar", desc: "Professor CSBS" }
+    ]
+  },
+  {
+    role: "CONVENER, POSTER SESSION",
+    members: [
+      { name: "Dr. N. Kirubakaran", desc: "Associate Professor" },
+      { name: "Mrs. Haripriya", desc: "Assistant Professor" }
+    ]
+  },
+  {
+    role: "MEMBERS",
+    members: [
+      { name: "Dr. J. Venkatesh", desc: "Professor / Member" },
+      { name: "Dr. S. Veeramalai", desc: "Professor / Member" },
+      { name: "Dr. A.R. Kavitha", desc: "Professor / Member" },
+      { name: "Dr. E. Kodhai", desc: "Professor / Member" },
+      { name: "Dr. G. Shanmugasundaram", desc: "Professor / Member" },
+      { name: "Dr. R. Basheer Mohammed", desc: "Professor / Member" }
+    ]
+  }
 ]
 
 const speakerThemes = {
@@ -44,11 +107,17 @@ export default function Team() {
           </div>
 
           <div className="committee-grid">
-            {committeeData.map((member, index) => (
+            {committeeData.map((section, index) => (
               <div key={index} className="committee-card">
-                <span className="committee-role">{member.role}</span>
-                <h3>{member.name}</h3>
-                <p>{member.desc}</p>
+                <span className="committee-role">{section.role}</span>
+                <div className="committee-member-list">
+                  {section.members.map((member, mIdx) => (
+                    <div key={mIdx} className="committee-member-item">
+                      <h4>{member.name}</h4>
+                      <p>{member.desc}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
