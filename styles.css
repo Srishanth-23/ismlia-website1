@@ -53,14 +53,16 @@ body {
 }
 
 /* Justified text alignment only for long reading paragraphs and about blocks */
+.about-page p,
 .about-card p,
-.feature-card p,
 .talk-body-column p,
 .speaker-modal-section p {
     text-align: justify;
     text-justify: inter-word;
-    text-align-last: left;
+    word-break: break-word;
     hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
 }
 
 /* Looping Fullscreen Background Video */
