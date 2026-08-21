@@ -53,7 +53,6 @@ body {
 }
 
 /* Justified text alignment only for long reading paragraphs and about blocks */
-.about-page p,
 .about-card p,
 .talk-body-column p,
 .speaker-modal-section p {
