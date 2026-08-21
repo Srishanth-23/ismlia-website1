@@ -8,28 +8,28 @@ export default function Contact() {
     {
       name: "Dr. R. Gowri",
       role: "Co-Chair",
-      designation: "HOD, Department of AIML",
+      designation: "HOD, Department of CSE (AIML)",
       phone: "+91 9600973073",
       email: "gowri.r@citchennai.net"
     },
     {
       name: "Dr. P. Karthikeyan",
       role: "Treasurer",
-      designation: "Professor, Department of AIML",
+      designation: "Professor, Department of CSE (AIML)",
       phone: "+91 9677781595",
       email: "karthikeyan.p@citchennai.net"
     },
     {
       name: "Dr. N. Kandavel",
       role: "Joint Secretary",
-      designation: "Program Coordinator, Department of AIML",
+      designation: "Program Coordinator, Department of CSE (AIML)",
       phone: "+91 8072251996",
       email: "kandavel.n@citchennai.net"
     },
     {
       name: "Mr. G. Senthil Kumar",
       role: "Treasurer",
-      designation: "Professor, Department of CSBS",
+      designation: "Professor, Department of CSE (CSBS)",
       phone: "+91 8939618019",
       email: "senthilkumar.g@citchennai.net"
     }
@@ -69,34 +69,34 @@ export default function Contact() {
     {
       role: "CO-CHAIRS",
       members: [
-        { name: "Dr. R. Gowri", desc: "HOD AIML" },
-        { name: "Dr. B. Sundarambal", desc: "HOD CSBS" }
+        { name: "Dr. R. Gowri", desc: "HOD, Department of CSE (AIML)" },
+        { name: "Dr. B. Sundarambal", desc: "HOD, Department of CSE (CSBS)" }
       ]
     },
     {
       role: "SECRETARY",
       members: [
-        { name: "Dr. S. Pavithra", desc: "HOD CSE" }
+        { name: "Dr. S. Pavithra", desc: "HOD, Department of CSE" }
       ]
     },
     {
       role: "JOINT SECRETARY",
       members: [
-        { name: "Dr. N. Kandavel", desc: "Program Coordinator AIML" }
+        { name: "Dr. N. Kandavel", desc: "Program Coordinator, Department of CSE (AIML)" }
       ]
     },
     {
       role: "TREASURER",
       members: [
-        { name: "Dr. P. Karthikeyan", desc: "Professor AIML" },
-        { name: "Mr. G. Senthil Kumar", desc: "Professor CSBS" }
+        { name: "Dr. P. Karthikeyan", desc: "Professor, Department of CSE (AIML)" },
+        { name: "Mr. G. Senthil Kumar", desc: "Professor, Department of CSE (CSBS)" }
       ]
     },
     {
       role: "CONVENER, POSTER SESSION",
       members: [
-        { name: "Dr. N. Kirubakaran", desc: "Associate Professor" },
-        { name: "Mrs. Haripriya", desc: "Assistant Professor" }
+        { name: "Dr. N. Kirubakaran", desc: "Associate Professor, Department of CSE (AIML)" },
+        { name: "Ms. Haripriya L", desc: "Assistant Professor, Department of CSE (AIML)" }
       ]
     },
     {
@@ -190,7 +190,7 @@ export default function Contact() {
                 </svg>
               </div>
               <h3>Organizing Departments</h3>
-              <p>Department of Artificial Intelligence and Machine Learning <br />& Department of Computer Science and Business Systems </p>
+              <p>Department of CSE (Artificial Intelligence and Machine Learning) <br />& Department of CSE (Computer Science and Business Systems) </p>
             </div>
           </div>
 

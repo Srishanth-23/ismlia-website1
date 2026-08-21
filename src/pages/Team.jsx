@@ -35,34 +35,34 @@ const committeeData = [
   {
     role: "CO-CHAIRS",
     members: [
-      { name: "Dr. R. Gowri", desc: "HOD AIML" },
-      { name: "Dr. B. Sundarambal", desc: "HOD CSBS" }
+      { name: "Dr. R. Gowri", desc: "HOD, Department of CSE (AIML)" },
+      { name: "Dr. B. Sundarambal", desc: "HOD, Department of CSE (CSBS)" }
     ]
   },
   {
     role: "SECRETARY",
     members: [
-      { name: "Dr. S. Pavithra", desc: "HOD CSE" }
+      { name: "Dr. S. Pavithra", desc: "HOD, Department of CSE" }
     ]
   },
   {
     role: "JOINT SECRETARY",
     members: [
-      { name: "Dr. N. Kandavel", desc: "Program Coordinator AIML" }
+      { name: "Dr. N. Kandavel", desc: "Program Coordinator, Department of CSE (AIML)" }
     ]
   },
   {
     role: "TREASURER",
     members: [
-      { name: "Dr. P. Karthikeyan", desc: "Professor AIML" },
-      { name: "Mr. G. Senthil Kumar", desc: "Professor CSBS" }
+      { name: "Dr. P. Karthikeyan", desc: "Professor, Department of CSE (AIML)" },
+      { name: "Mr. G. Senthil Kumar", desc: "Professor, Department of CSE (CSBS)" }
     ]
   },
   {
     role: "CONVENER, POSTER SESSION",
     members: [
-      { name: "Dr. N. Kirubakaran", desc: "Associate Professor" },
-      { name: "Mrs. Haripriya", desc: "Assistant Professor" }
+      { name: "Dr. N. Kirubakaran", desc: "Associate Professor, Department of CSE (AIML)" },
+      { name: "Ms. Haripriya L", desc: "Assistant Professor, Department of CSE (AIML)" }
     ]
   },
   {
