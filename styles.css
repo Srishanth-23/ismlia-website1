@@ -925,7 +925,7 @@ h1, h2, h3, h4 {
 /* Committee Section */
 .committee-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
     gap: 20px;
 }
 
@@ -992,6 +992,12 @@ h1, h2, h3, h4 {
     font-weight: 700;
     color: #FFFFFF;
     margin: 0;
+}
+
+@media (min-width: 480px) {
+    .committee-member-item h4 {
+        white-space: nowrap;
+    }
 }
 
 .committee-member-item p {

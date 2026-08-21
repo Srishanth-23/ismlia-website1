@@ -29,7 +29,7 @@ export default function Contact() {
     {
       name: "Mr. G. Senthil Kumar",
       role: "Treasurer",
-      designation: "Professor, Department of CSBS",
+      designation: "Program Coordinator, Department of CSBS",
       phone: "+91 8939618019",
       email: "senthilkumar.g@citchennai.net"
     }
@@ -102,7 +102,7 @@ export default function Contact() {
       role: "TREASURER",
       members: [
         { name: "Dr. P. Karthikeyan", desc: "Professor, Department of AIML" },
-        { name: "Mr. G. Senthil Kumar", desc: "Professor, Department of CSBS" }
+        { name: "Mr. G. Senthil Kumar", desc: "Program Coordinator, Department of CSBS" }
       ]
     },
     {

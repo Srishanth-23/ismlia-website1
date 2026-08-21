@@ -68,7 +68,7 @@ const committeeData = [
     role: "TREASURER",
     members: [
       { name: "Dr. P. Karthikeyan", desc: "Professor, Department of AIML" },
-      { name: "Mr. G. Senthil Kumar", desc: "Professor, Department of CSBS" }
+      { name: "Mr. G. Senthil Kumar", desc: "Program Coordinator, Department of CSBS" }
     ]
   },
   {
