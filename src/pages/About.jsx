@@ -136,14 +136,18 @@ export default function About() {
       {/* About Content (Preamble & Scope at Top) */}
       <section className="section about-section" style={{ paddingTop: '140px' }}>
         <div className="container">
-          <div className="section-header" style={{ textAlign: 'left', margin: '0 0 40px 0', maxWidth: '900px' }}>
-            <span className="section-tag">Preamble & Scope</span>
-            <h2 className="section-title">Industrial Applications of Machine Learning</h2>
-            <p className="section-desc">
-              Machine Learning (ML), an algorithmic approach to extracting meaningful information from data, is finding its
-              way into an expanding range of fields, thanks to the power of modern-day computers in efficiently handling
-              and processing vast amounts of data.
-            </p>
+          <div className="section-header" style={{ maxWidth: '100%', margin: '0 0 40px 0' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>
+              <span className="section-tag" style={{ margin: 0 }}>Preamble & Scope</span>
+            </div>
+            <div style={{ maxWidth: '900px', textAlign: 'left', margin: '0 auto 0 0' }}>
+              <h2 className="section-title">Industrial Applications of Machine Learning</h2>
+              <p className="section-desc">
+                Machine Learning (ML), an algorithmic approach to extracting meaningful information from data, is finding its
+                way into an expanding range of fields, thanks to the power of modern-day computers in efficiently handling
+                and processing vast amounts of data.
+              </p>
+            </div>
           </div>
 
           <div className="about-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px', marginTop: '40px', marginBottom: '50px' }}>
