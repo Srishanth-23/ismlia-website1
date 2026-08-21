@@ -30,7 +30,7 @@ const committeeData = [
   {
     role: "PROGRAM ADVISOR",
     members: [
-      { name: "Dr. S. Sundaramoorthy", desc: "Dr. (Emeritus), CIT" }
+      { name: "Dr. S. Sundaramoorthy", desc: "Prof. (Emeritus), CIT" }
     ]
   },
   {
