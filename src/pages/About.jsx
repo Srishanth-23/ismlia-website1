@@ -18,7 +18,7 @@ const timelineData = [
     tagClass: "tag-green",
     tagText: "Inauguration",
     title: "Symposium Inaugural Ceremony & Opening Remarks",
-    desc: "Address by Patron Leadership & Convener Dr. S. Sundaramoorthy.",
+    desc: "Address by Patron Leadership & Convener Prof. Dr. S. Sundaramoorthy.",
     align: "right-item"
   },
   {

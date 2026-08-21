@@ -30,13 +30,13 @@ const committeeData = [
   {
     role: "PROGRAM ADVISOR",
     members: [
-      { name: "Dr. S. Sundaramoorthy", desc: "Prof. (Emeritus), CIT" }
+      { name: "Prof. Dr. S. Sundaramoorthy", desc: "Prof. (Emeritus), CIT" }
     ]
   },
   {
     role: "CHAIR (INTERNATIONAL)",
     members: [
-      { name: "Dr. S. Lakshminarayanan", desc: "NUS, Singapore" }
+      { name: "Prof. Dr. S. Lakshminarayanan", desc: "NUS, Singapore" }
     ]
   },
   {
