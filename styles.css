@@ -52,12 +52,9 @@ body {
     position: relative;
 }
 
-/* Justified text alignment only for long reading paragraphs and about/guidelines blocks */
+/* Justified text alignment only for long reading paragraphs and about blocks */
 .about-page p,
 .about-card p,
-.poster-section p,
-.poster-guidelines p,
-.guidelines-card p,
 .about-section .section-desc {
     text-align: justify;
 }
