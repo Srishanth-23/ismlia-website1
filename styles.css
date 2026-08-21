@@ -54,8 +54,7 @@ body {
 
 /* Justified text alignment only for long reading paragraphs and about blocks */
 .about-page p,
-.about-card p,
-.about-section .section-desc {
+.about-card p {
     text-align: justify;
 }
 

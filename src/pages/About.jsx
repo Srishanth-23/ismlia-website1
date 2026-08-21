@@ -136,7 +136,7 @@ export default function About() {
       {/* About Content (Preamble & Scope at Top) */}
       <section className="section about-section" style={{ paddingTop: '140px' }}>
         <div className="container">
-          <div className="section-header">
+          <div className="section-header" style={{ textAlign: 'left', margin: '0 0 40px 0', maxWidth: '900px' }}>
             <span className="section-tag">Preamble & Scope</span>
             <h2 className="section-title">Industrial Applications of Machine Learning</h2>
             <p className="section-desc">
