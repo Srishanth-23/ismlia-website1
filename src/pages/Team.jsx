@@ -30,13 +30,13 @@ const committeeData = [
   {
     role: "PROGRAM ADVISOR",
     members: [
-      { name: "Prof. S. Sundaramoorthy", desc: "Prof. (Emeritus), CIT" }
+      { name: "Dr. S. Sundaramoorthy", desc: "Dr. (Emeritus), CIT" }
     ]
   },
   {
     role: "CHAIR (INTERNATIONAL)",
     members: [
-      { name: "Prof. S. Lakshminarayanan", desc: "NUS, Singapore" }
+      { name: "Dr. S. Lakshminarayanan", desc: "NUS, Singapore" }
     ]
   },
   {
@@ -75,7 +75,7 @@ const committeeData = [
     role: "CONVENER, POSTER SESSION",
     members: [
       { name: "Dr. N. Kirubakaran", desc: "Associate Professor, Department of CSBS" },
-      { name: "Ms. Haripriya L", desc: "Assistant Professor, Department of AIML" }
+      { name: "Ms. L. Haripriya", desc: "Assistant Professor, Department of AIML" }
     ]
   },
   {
