@@ -5,7 +5,7 @@ const committeeData = [
   {
     role: "PATRON",
     members: [
-      { name: "Shree P Sriram", desc: "Chairman, CIT" }
+      { name: "Shri P Sriram", desc: "Chairman, CIT" }
     ]
   },
   {
@@ -48,7 +48,7 @@ const committeeData = [
   {
     role: "CO-CHAIRS",
     members: [
-      { name: "Dr. R. Gowri", desc: "HOD, Department of CSE (AIML)" },
+      { name: "Dr. R. Gowri", desc: "HOD, Department of AIML" },
       { name: "Dr. B. Sundarambal", desc: "HOD, Department of CSBS" }
     ]
   },
@@ -61,13 +61,13 @@ const committeeData = [
   {
     role: "JOINT SECRETARY",
     members: [
-      { name: "Dr. N. Kandavel", desc: "Program Coordinator, Department of CSE (AIML)" }
+      { name: "Dr. N. Kandavel", desc: "Program Coordinator, Department of AIML" }
     ]
   },
   {
     role: "TREASURER",
     members: [
-      { name: "Dr. P. Karthikeyan", desc: "Professor, Department of CSE (AIML)" },
+      { name: "Dr. P. Karthikeyan", desc: "Professor, Department of AIML" },
       { name: "Mr. G. Senthil Kumar", desc: "Professor, Department of CSBS" }
     ]
   },
@@ -75,7 +75,7 @@ const committeeData = [
     role: "CONVENER, POSTER SESSION",
     members: [
       { name: "Dr. N. Kirubakaran", desc: "Associate Professor, Department of CSBS" },
-      { name: "Ms. Haripriya L", desc: "Assistant Professor, Department of CSE (AIML)" }
+      { name: "Ms. Haripriya L", desc: "Assistant Professor, Department of AIML" }
     ]
   },
   {

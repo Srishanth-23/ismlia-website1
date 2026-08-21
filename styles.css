@@ -54,7 +54,9 @@ body {
 
 /* Justified text alignment only for long reading paragraphs and about blocks */
 .about-page p,
-.about-card p {
+.about-card p,
+.talk-body-column p,
+.speaker-modal-section p {
     text-align: justify;
 }
 
@@ -416,7 +418,7 @@ h1, h2, h3, h4 {
 }
 
 .logo-text {
-    font-family: var(--font-title);
+    font-family: var(--font-heading);
     font-size: 1.5rem;
     font-weight: 800;
     letter-spacing: 1px;

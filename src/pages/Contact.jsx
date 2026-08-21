@@ -8,21 +8,21 @@ export default function Contact() {
     {
       name: "Dr. R. Gowri",
       role: "Co-Chair",
-      designation: "HOD, Department of CSE (AIML)",
+      designation: "HOD, Department of AIML",
       phone: "+91 9600973073",
       email: "gowri.r@citchennai.net"
     },
     {
       name: "Dr. P. Karthikeyan",
       role: "Treasurer",
-      designation: "Professor, Department of CSE (AIML)",
+      designation: "Professor, Department of AIML",
       phone: "+91 9677781595",
       email: "karthikeyan.p@citchennai.net"
     },
     {
       name: "Dr. N. Kandavel",
       role: "Joint Secretary",
-      designation: "Program Coordinator, Department of CSE (AIML)",
+      designation: "Program Coordinator, Department of AIML",
       phone: "+91 8072251996",
       email: "kandavel.n@citchennai.net"
     },
@@ -39,7 +39,7 @@ export default function Contact() {
     {
       role: "PATRON",
       members: [
-        { name: "Shree P Sriram", desc: "Chairman, CIT" }
+        { name: "Shri P Sriram", desc: "Chairman, CIT" }
       ]
     },
     {
@@ -82,7 +82,7 @@ export default function Contact() {
     {
       role: "CO-CHAIRS",
       members: [
-        { name: "Dr. R. Gowri", desc: "HOD, Department of CSE (AIML)" },
+        { name: "Dr. R. Gowri", desc: "HOD, Department of AIML" },
         { name: "Dr. B. Sundarambal", desc: "HOD, Department of CSBS" }
       ]
     },
@@ -95,13 +95,13 @@ export default function Contact() {
     {
       role: "JOINT SECRETARY",
       members: [
-        { name: "Dr. N. Kandavel", desc: "Program Coordinator, Department of CSE (AIML)" }
+        { name: "Dr. N. Kandavel", desc: "Program Coordinator, Department of AIML" }
       ]
     },
     {
       role: "TREASURER",
       members: [
-        { name: "Dr. P. Karthikeyan", desc: "Professor, Department of CSE (AIML)" },
+        { name: "Dr. P. Karthikeyan", desc: "Professor, Department of AIML" },
         { name: "Mr. G. Senthil Kumar", desc: "Professor, Department of CSBS" }
       ]
     },
@@ -109,7 +109,7 @@ export default function Contact() {
       role: "CONVENER, POSTER SESSION",
       members: [
         { name: "Dr. N. Kirubakaran", desc: "Associate Professor, Department of CSBS" },
-        { name: "Ms. Haripriya L", desc: "Assistant Professor, Department of CSE (AIML)" }
+        { name: "Ms. Haripriya L", desc: "Assistant Professor, Department of AIML" }
       ]
     },
     {
@@ -203,7 +203,7 @@ export default function Contact() {
                 </svg>
               </div>
               <h3>Organizing Departments</h3>
-              <p>Department of CSE (Artificial Intelligence and Machine Learning) <br />& Department of Computer Science and Business Systems </p>
+              <p>Department of Artificial Intelligence and Machine Learning <br />& Department of Computer Science and Business Systems </p>
             </div>
           </div>
 

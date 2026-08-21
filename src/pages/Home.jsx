@@ -57,7 +57,7 @@ export default function Home({ onSelectSpeaker }) {
           <div className="organizer-tagline" style={{ textAlign: 'center', marginTop: '24px', marginBottom: '32px' }}>
             <span style={{ display: 'block', fontSize: '0.85rem', textTransform: 'uppercase', color: 'var(--primary)', marginBottom: '8px', letterSpacing: '2px', fontWeight: '600' }}>Organized by</span>
             <span style={{ display: 'block', fontSize: '1.05rem', color: '#FFFFFF', fontWeight: '500', lineHeight: '1.6', maxWidth: '800px', margin: '0 auto 12px auto' }}>
-              Department of CSE (Artificial Intelligence and Machine Learning) <br />
+              Department of Artificial Intelligence and Machine Learning <br />
               & Department of Computer Science and Business Systems
             </span>
             <strong style={{ display: 'block', fontSize: '1.15rem', color: 'var(--primary)', letterSpacing: '0.5px', textTransform: 'uppercase' }}>
