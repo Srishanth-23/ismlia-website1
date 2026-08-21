@@ -203,7 +203,7 @@ export default function Contact() {
                 </svg>
               </div>
               <h3>Organizing Departments</h3>
-              <p>Department of CSE (Artificial Intelligence and Machine Learning) <br />& Department of CSE (Computer Science and Business Systems) </p>
+              <p>Department of CSE (Artificial Intelligence and Machine Learning) <br />& Department of Computer Science and Business Systems </p>
             </div>
           </div>
 
