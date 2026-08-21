@@ -15,6 +15,19 @@ const committeeData = [
     ]
   },
   {
+    role: "SECRETARY (COLLEGE)",
+    members: [
+      { name: "Smt. S. Sridevi", desc: "Secretary, CIT" }
+    ]
+  },
+  {
+    role: "DIRECTORS",
+    members: [
+      { name: "Shri. S. Gokulakrishnan", desc: "Director - Innovation, CIT" },
+      { name: "Shri. S. Balakrishnan", desc: "Director - Strategic Development, CIT" }
+    ]
+  },
+  {
     role: "PROGRAM ADVISOR",
     members: [
       { name: "Prof. S. Sundaramoorthy", desc: "Prof. (Emeritus), CIT" }
