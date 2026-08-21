@@ -29,7 +29,7 @@ export default function Contact() {
     {
       name: "Mr. G. Senthil Kumar",
       role: "Treasurer",
-      designation: "Professor, Department of CSE (CSBS)",
+      designation: "Professor, Department of CSBS",
       phone: "+91 8939618019",
       email: "senthilkumar.g@citchennai.net"
     }
@@ -70,7 +70,7 @@ export default function Contact() {
       role: "CO-CHAIRS",
       members: [
         { name: "Dr. R. Gowri", desc: "HOD, Department of CSE (AIML)" },
-        { name: "Dr. B. Sundarambal", desc: "HOD, Department of CSE (CSBS)" }
+        { name: "Dr. B. Sundarambal", desc: "HOD, Department of CSBS" }
       ]
     },
     {
@@ -89,7 +89,7 @@ export default function Contact() {
       role: "TREASURER",
       members: [
         { name: "Dr. P. Karthikeyan", desc: "Professor, Department of CSE (AIML)" },
-        { name: "Mr. G. Senthil Kumar", desc: "Professor, Department of CSE (CSBS)" }
+        { name: "Mr. G. Senthil Kumar", desc: "Professor, Department of CSBS" }
       ]
     },
     {

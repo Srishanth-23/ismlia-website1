@@ -16,7 +16,7 @@ export default function Footer() {
             Friday 25th September 2026
           </p>
           <p>
-            Organized by Department of CSE (Artificial Intelligence and Machine Learning) & Department of CSE (Computer Science and Business Systems)
+            Organized by Department of CSE (Artificial Intelligence and Machine Learning) & Department of Computer Science and Business Systems
             <br />
             <strong>Chennai Institute of Technology, Chennai, India</strong>
           </p>
