@@ -74,7 +74,7 @@ const committeeData = [
   {
     role: "CONVENER, POSTER SESSION",
     members: [
-      { name: "Dr. N. Kirubakaran", desc: "Associate Professor, Department of CSE (AIML)" },
+      { name: "Dr. N. Kirubakaran", desc: "Associate Professor, Department of CSBS" },
       { name: "Ms. Haripriya L", desc: "Assistant Professor, Department of CSE (AIML)" }
     ]
   },
