@@ -1982,10 +1982,10 @@ h1, h2, h3, h4 {
     border: 1px solid rgba(0, 242, 254, 0.3);
 }
 
-.tag-pink {
-    background: rgba(255, 8, 68, 0.12);
-    color: #ff0844;
-    border: 1px solid rgba(255, 8, 68, 0.3);
+.tag-green {
+    background: rgba(16, 185, 129, 0.12);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
 }
 
 .tag-yellow {

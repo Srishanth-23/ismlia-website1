@@ -15,7 +15,7 @@ const timelineData = [
   {
     phase: "02",
     time: "09:30 AM – 10:15 AM",
-    tagClass: "tag-pink",
+    tagClass: "tag-green",
     tagText: "Inauguration",
     title: "Symposium Inaugural Ceremony & Opening Remarks",
     desc: "Address by Patron Leadership & Convener Prof. S. Sundaramoorthy.",
@@ -42,7 +42,7 @@ const timelineData = [
   {
     phase: "05",
     time: "12:15 PM – 01:00 PM",
-    tagClass: "tag-pink",
+    tagClass: "tag-green",
     tagText: "Poster Competition",
     title: "Interactive Student & Scholar Poster Exhibition",
     desc: "Cash prize evaluation (Rs 5,000, 3,000 & 2,000) by International Chair.",
@@ -69,7 +69,7 @@ const timelineData = [
   {
     phase: "08",
     time: "04:30 PM – 05:15 PM",
-    tagClass: "tag-pink",
+    tagClass: "tag-green",
     tagText: "Panel Debate",
     title: "Panel Discussion: ML in Industrial Productivity",
     desc: "Interactive panel with international chairs on industrial deployment.",
