@@ -187,7 +187,7 @@ export default function Home({ onSelectSpeaker }) {
           </Marquee>
 
           <div style={{ textAlign: 'center', marginTop: '40px' }}>
-            <Link to="/about" className="btn btn-outline">Explore Full About & Schedule →</Link>
+            <Link to="/about" className="btn btn-outline">Explore Fully About & Schedule →</Link>
           </div>
         </div>
       </section>
