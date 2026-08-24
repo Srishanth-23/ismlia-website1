@@ -43,7 +43,7 @@ export default function Poster() {
 
           <PosterGuidelines />
 
-          <div style={{ textAlign: 'center', marginTop: '60px' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '20px', marginTop: '60px' }}>
             <Link 
               to="/register#register" 
               state={{ scrollTarget: 'register', poster: 'Yes' }}
@@ -55,6 +55,19 @@ export default function Poster() {
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </Link>
+            <a 
+              href="/ISMLIA_2026_Poster.pdf" 
+              download
+              className="btn btn-outline btn-lg" 
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '10px' }}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              <span>Download Poster PDF</span>
+            </a>
           </div>
         </div>
       </section>

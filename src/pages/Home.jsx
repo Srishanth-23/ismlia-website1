@@ -68,7 +68,7 @@ export default function Home({ onSelectSpeaker }) {
             </span>
           </div>
 
-          <div className="hero-cta-group">
+          <div className="hero-cta-group" style={{ display: 'flex', flexWrap: 'wrap', gap: '15px', justifyContent: 'center' }}>
             <Link to="/register" className="btn btn-primary btn-lg">
               <span>Register for Symposium</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -78,6 +78,14 @@ export default function Home({ onSelectSpeaker }) {
             <Link to="/register" state={{ scrollTarget: 'poster' }} className="btn btn-glass btn-lg">
               <span>Submit Poster Abstract</span>
             </Link>
+            <a href="/ISMLIA_2026_Poster.pdf" download className="btn btn-outline btn-lg" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px' }}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              <span>Download Poster PDF</span>
+            </a>
           </div>
 
           {/* Event Countdown */}
