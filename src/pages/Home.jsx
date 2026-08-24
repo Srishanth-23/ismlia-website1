@@ -75,7 +75,7 @@ export default function Home({ onSelectSpeaker }) {
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </Link>
-            <Link to="/register" state={{ scrollTarget: 'poster' }} className="btn btn-glass btn-lg">
+            <Link to="/poster" className="btn btn-glass btn-lg">
               <span>Submit Poster Abstract</span>
             </Link>
             <a href="/ISMLIA_2026_Poster.pdf" download className="btn btn-outline btn-lg" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px' }}>
