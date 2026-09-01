@@ -116,7 +116,7 @@ export default function Register() {
       // Live Google Apps Script Web App URL
       const scriptUrl = import.meta.env.VITE_GOOGLE_SCRIPT_URL || 'https://script.google.com/macros/s/AKfycbwaVZRHkQOL_RKjHxmIdOglNM7veFwLdNUpPm4iCFQt3KNXOpW7a3qsQesT-v62MzRZ/exec'
       
-      let driveFolderUrl = 'https://drive.google.com/drive/folders/1b-T9_6l7E-vE_X-ismlia26-posters-placeholder'
+      let driveFolderUrl = 'https://drive.google.com/drive/folders/1Ofo88bXVJ7b4mbmCivjT2wFAYnsGqWeB'
 
       if (scriptUrl && scriptUrl !== 'YOUR_GOOGLE_SCRIPT_URL_HERE') {
         try {

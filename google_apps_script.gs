@@ -1,15 +1,14 @@
 /**
  * ISMLIA 2026 Registration Google Apps Script
  * Spreadsheet ID: 12NOUMzXg0oAJxKIHEpwbXbLD-SmMxV61N5Zk5ktneaI
+ * Main Drive Folder ID: 1Ofo88bXVJ7b4mbmCivjT2wFAYnsGqWeB
  */
 
 function doPost(e) {
   var lock = LockService.getScriptLock();
-  // Wait for up to 10 seconds for other processes to finish
   lock.tryLock(10000);
 
   try {
-    // Open the spreadsheet by ID or active spreadsheet
     var SPREADSHEET_ID = "12NOUMzXg0oAJxKIHEpwbXbLD-SmMxV61N5Zk5ktneaI";
     var doc;
     try {
@@ -35,51 +34,69 @@ function doPost(e) {
         "Pass Category",
         "Poster Session",
         "Transaction ID / UTR",
+        "Participant Drive Folder URL",
         "Payment Screenshot URL",
         "Abstract PDF URL"
       ]);
-      // Format header row
-      sheet.getRange(1, 1, 1, 11).setFontWeight("bold").setBackground("#d4af37").setFontColor("#ffffff");
+      sheet.getRange(1, 1, 1, 12).setFontWeight("bold").setBackground("#d4af37").setFontColor("#ffffff");
     }
 
     var data = JSON.parse(e.postData.contents);
 
-    // Folder for storing uploaded screenshots & PDFs
-    var folderName = "ISMLIA 2026 Uploads";
-    var folder;
-    var folders = DriveApp.getFoldersByName(folderName);
-    if (folders.hasNext()) {
-      folder = folders.next();
-    } else {
-      folder = DriveApp.createFolder(folderName);
+    // Target Main Google Drive Folder ID provided by user
+    var MAIN_FOLDER_ID = "1Ofo88bXVJ7b4mbmCivjT2wFAYnsGqWeB";
+    var mainFolder;
+    try {
+      mainFolder = DriveApp.getFolderById(MAIN_FOLDER_ID);
+    } catch (fErr) {
+      var folders = DriveApp.getFoldersByName("ISMLIA 2026 Uploads");
+      if (folders.hasNext()) {
+        mainFolder = folders.next();
+      } else {
+        mainFolder = DriveApp.createFolder("ISMLIA 2026 Uploads");
+      }
     }
+
+    // Create a dedicated subfolder for this participant: e.g. ISMLIA-436625_John_Doe
+    var safeFName = (data.fname || "").trim().replace(/\s+/g, "_");
+    var safeLName = (data.lname || "").trim().replace(/\s+/g, "_");
+    var participantFolderName = (data.regId || "ISMLIA-USER") + "_" + safeFName + "_" + safeLName;
+
+    var participantFolder = mainFolder.createFolder(participantFolderName);
+    try {
+      participantFolder.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
+    } catch (sharingErr) {}
 
     var screenshotUrl = "N/A";
     var pdfUrl = "N/A";
 
-    // Save payment screenshot to Drive
+    // Save payment screenshot inside participant's subfolder
     if (data.screenshotBase64) {
       try {
         var decodedScreenshot = Utilities.base64Decode(data.screenshotBase64);
         var mimeType = data.screenshotMime || "image/jpeg";
         var fileName = (data.regId || "Receipt") + "_Screenshot_" + (data.screenshotName || "screenshot.jpg");
         var screenshotBlob = Utilities.newBlob(decodedScreenshot, mimeType, fileName);
-        var screenshotFile = folder.createFile(screenshotBlob);
-        screenshotFile.setSharing(MimeType.OTHER, Access.ANYONE_WITH_LINK);
+        var screenshotFile = participantFolder.createFile(screenshotBlob);
+        try {
+          screenshotFile.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
+        } catch (sErr) {}
         screenshotUrl = screenshotFile.getUrl();
       } catch (imgErr) {
         screenshotUrl = "Upload error: " + imgErr.toString();
       }
     }
 
-    // Save abstract PDF to Drive if provided
+    // Save abstract PDF inside participant's subfolder if provided
     if (data.pdfBase64) {
       try {
         var decodedPdf = Utilities.base64Decode(data.pdfBase64);
         var pdfFileName = (data.regId || "Abstract") + "_Abstract_" + (data.pdfName || "abstract.pdf");
         var pdfBlob = Utilities.newBlob(decodedPdf, "application/pdf", pdfFileName);
-        var pdfFile = folder.createFile(pdfBlob);
-        pdfFile.setSharing(MimeType.OTHER, Access.ANYONE_WITH_LINK);
+        var pdfFile = participantFolder.createFile(pdfBlob);
+        try {
+          pdfFile.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
+        } catch (pErr) {}
         pdfUrl = pdfFile.getUrl();
       } catch (pdfErr) {
         pdfUrl = "Upload error: " + pdfErr.toString();
@@ -99,12 +116,17 @@ function doPost(e) {
       data.pass || "",
       data.poster || "",
       data.txid || "",
+      participantFolder.getUrl(),
       screenshotUrl,
       pdfUrl
     ]);
 
     return ContentService
-      .createTextOutput(JSON.stringify({ status: "success", regId: data.regId, folderUrl: folder.getUrl() }))
+      .createTextOutput(JSON.stringify({ 
+        status: "success", 
+        regId: data.regId, 
+        folderUrl: participantFolder.getUrl() 
+      }))
       .setMimeType(ContentService.MimeType.JSON);
 
   } catch (error) {
