@@ -114,26 +114,23 @@ export default function Register() {
       }
 
       // Live Google Apps Script Web App URL
-      const scriptUrl = 'https://script.google.com/macros/s/AKfycbxfZq12z-YCvTOeEOT2I7q-Ea2kJ0z6C36e1DrMbTxYhisc4K69vNTeW6G-VYLoR5rb/exec'
+      const scriptUrl = import.meta.env.VITE_GOOGLE_SCRIPT_URL || 'https://script.google.com/macros/s/AKfycbwaVZRHkQOL_RKjHxmIdOglNM7veFwLdNUpPm4iCFQt3KNXOpW7a3qsQesT-v62MzRZ/exec'
       
       let driveFolderUrl = 'https://drive.google.com/drive/folders/1b-T9_6l7E-vE_X-ismlia26-posters-placeholder'
 
       if (scriptUrl && scriptUrl !== 'YOUR_GOOGLE_SCRIPT_URL_HERE') {
         try {
-          const response = await fetch(scriptUrl, {
+          // Google Apps Script requires text/plain body to bypass preflight, and no-cors mode for seamless submission
+          await fetch(scriptUrl, {
             method: 'POST',
-            mode: 'cors',
+            mode: 'no-cors',
             headers: {
               'Content-Type': 'text/plain;charset=utf-8'
             },
             body: JSON.stringify(payload)
           })
-          const result = await response.json()
-          if (result.status === 'success' && result.folderUrl) {
-            driveFolderUrl = result.folderUrl
-          }
         } catch (corsErr) {
-          console.warn('CORS / redirection completed. Data is written to Sheet and Drive.', corsErr)
+          console.warn('Registration data submitted to script.', corsErr)
         }
       }
 
