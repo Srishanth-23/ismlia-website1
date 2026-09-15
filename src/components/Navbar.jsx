@@ -15,11 +15,10 @@ export default function Navbar() {
       }
     }
 
-    // On non-home pages, the navbar is always "scrolled" (solid) as in the original HTML.
     if (location.pathname !== '/') {
       setScrolled(true)
     } else {
-      handleScroll() // Initialize for home page
+      handleScroll()
       window.addEventListener('scroll', handleScroll)
     }
 
@@ -28,8 +27,26 @@ export default function Navbar() {
     }
   }, [location.pathname])
 
+  // Close menu on route change
+  useEffect(() => {
+    setMobileMenuOpen(false)
+    document.body.style.overflow = ''
+  }, [location.pathname])
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [mobileMenuOpen])
+
   const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen)
+    setMobileMenuOpen(prev => !prev)
   }
 
   const closeMobileMenu = () => {
@@ -37,74 +54,91 @@ export default function Navbar() {
   }
 
   return (
-    <header className={`navbar ${scrolled ? 'scrolled' : ''}`} id="navbar">
-      <div className="container nav-container">
-        <Link to="/" className="logo" onClick={closeMobileMenu}>
-          <img src="/Cit logo.png" alt="CIT Logo" className="logo-img" />
-          <span className="logo-text">ISMLIA <span className="accent-text">'26</span></span>
-        </Link>
-        
-        <nav className={`nav-links ${mobileMenuOpen ? 'active' : ''}`} id="nav-links">
-          <Link 
-            to="/" 
-            className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
-            onClick={closeMobileMenu}
-          >
-            Home
+    <>
+      <header className={`navbar ${scrolled ? 'scrolled' : ''} ${mobileMenuOpen ? 'menu-open' : ''}`} id="navbar">
+        <div className="container nav-container">
+          <Link to="/" className="logo" onClick={closeMobileMenu}>
+            <img src="/Cit logo.png" alt="CIT Logo" className="logo-img" />
+            <span className="logo-text">ISMLIA <span className="accent-text">'26</span></span>
           </Link>
-          <Link 
-            to="/about" 
-            className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}
-            onClick={closeMobileMenu}
-          >
-            About
-          </Link>
-          <Link 
-            to="/team" 
-            className={`nav-link ${location.pathname === '/team' ? 'active' : ''}`}
-            onClick={closeMobileMenu}
-          >
-            Team
-          </Link>
-          <Link 
-            to="/poster" 
-            className={`nav-link ${location.pathname === '/poster' ? 'active' : ''}`}
-            onClick={closeMobileMenu}
-          >
-            Poster
-          </Link>
-          <Link 
-            to="/contact" 
-            className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}
-            onClick={closeMobileMenu}
-          >
-            Contact
-          </Link>
-          <Link 
-            to="/register" 
-            className={`nav-link ${location.pathname === '/register' ? 'active' : ''}`}
-            onClick={closeMobileMenu}
-          >
-            Register
-          </Link>
-        </nav>
+          
+          <nav className={`nav-links ${mobileMenuOpen ? 'active' : ''}`} id="nav-links">
+            <Link 
+              to="/" 
+              className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
+              onClick={closeMobileMenu}
+            >
+              Home
+            </Link>
+            <Link 
+              to="/about" 
+              className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}
+              onClick={closeMobileMenu}
+            >
+              About
+            </Link>
+            <Link 
+              to="/team" 
+              className={`nav-link ${location.pathname === '/team' ? 'active' : ''}`}
+              onClick={closeMobileMenu}
+            >
+              Team
+            </Link>
+            <Link 
+              to="/poster" 
+              className={`nav-link ${location.pathname === '/poster' ? 'active' : ''}`}
+              onClick={closeMobileMenu}
+            >
+              Poster
+            </Link>
+            <Link 
+              to="/contact" 
+              className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}
+              onClick={closeMobileMenu}
+            >
+              Contact
+            </Link>
+            <Link 
+              to="/register" 
+              className={`nav-link ${location.pathname === '/register' ? 'active' : ''}`}
+              onClick={closeMobileMenu}
+            >
+              Register
+            </Link>
+            
+            {/* Mobile-only CTA in drawer */}
+            <div className="mobile-nav-cta">
+              <Link to="/register" className="btn btn-primary btn-full" onClick={closeMobileMenu}>
+                Register for ISMLIA '26
+              </Link>
+            </div>
+          </nav>
 
-        <div className="nav-actions">
-          <Link to="/register" className="btn btn-primary nav-btn" onClick={closeMobileMenu}>
-            Register Now
-          </Link>
-          <button 
-            className="mobile-toggle" 
-            id="mobile-toggle" 
-            aria-label="Toggle Menu"
-            onClick={toggleMobileMenu}
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+          <div className="nav-actions">
+            <Link to="/register" className="btn btn-primary nav-btn" onClick={closeMobileMenu}>
+              Register Now
+            </Link>
+            <button 
+              className={`mobile-toggle ${mobileMenuOpen ? 'active' : ''}`} 
+              id="mobile-toggle" 
+              aria-label="Toggle Menu"
+              aria-expanded={mobileMenuOpen}
+              onClick={toggleMobileMenu}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+      
+      {/* Backdrop overlay for mobile menu */}
+      <div 
+        className={`mobile-menu-backdrop ${mobileMenuOpen ? 'active' : ''}`} 
+        onClick={closeMobileMenu}
+        aria-hidden="true"
+      />
+    </>
   )
 }
