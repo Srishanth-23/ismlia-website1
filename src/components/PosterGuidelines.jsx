@@ -154,7 +154,7 @@ export default function PosterGuidelines() {
               </div>
               <div>
                 <h4 style={{ color: '#eab308', margin: '0 0 4px 0' }}>Abstract Submission Deadline</h4>
-                <p style={{ color: '#FFFFFF', margin: '0', fontSize: '1.05rem', fontWeight: 'bold' }}>September 10, 2026</p>
+                <p style={{ color: '#FFFFFF', margin: '0', fontSize: '1.05rem', fontWeight: 'bold' }}>September 18, 2026</p>
                 <p style={{ color: 'var(--text-muted)', margin: '2px 0 0 0', fontSize: '0.85rem' }}>Submit abstract in PDF format. Late submissions will not be considered.</p>
               </div>
             </div>
@@ -167,7 +167,7 @@ export default function PosterGuidelines() {
               </div>
               <div>
                 <h4 style={{ color: '#00f0ff', margin: '0 0 4px 0' }}>Shortlist Announcement</h4>
-                <p style={{ color: '#FFFFFF', margin: '0', fontSize: '1.05rem', fontWeight: 'bold' }}>September 13, 2026</p>
+                <p style={{ color: '#FFFFFF', margin: '0', fontSize: '1.05rem', fontWeight: 'bold' }}>September 20, 2026</p>
                 <p style={{ color: 'var(--text-muted)', margin: '2px 0 0 0', fontSize: '0.85rem' }}>Shortlisted candidates will receive instructions to prepare an A1 size poster for physical presentation.</p>
               </div>
             </div>
